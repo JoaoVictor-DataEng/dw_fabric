@@ -1,0 +1,33 @@
+table tb_cc
+	lineageTag: acfff1ea-d62d-41b0-9251-c8740c6268ec
+	sourceLineageTag: [dbo].[tb_cc]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ebd7a175-58f3-4765-9220-2891c870a292
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cc
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d5531ffc-35e1-4785-b686-5bf4d9a48881
+		sourceLineageTag: cc
+		summarizeBy: none
+		sourceColumn: cc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_cc = entity
+		mode: directLake
+		source
+			entityName: tb_cc
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

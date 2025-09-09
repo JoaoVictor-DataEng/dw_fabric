@@ -1,0 +1,9 @@
+role Comercial
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [DIRETORIA] == "DIRETORIA COMERCIAL"
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] == "DIRETORIA COMERCIAL"
+
+	annotation PBI_Id = 87a707cf521045c5a868ef8a718d5833
+

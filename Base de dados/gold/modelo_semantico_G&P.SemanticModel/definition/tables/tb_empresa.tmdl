@@ -1,0 +1,159 @@
+table tb_empresa
+	lineageTag: 3fe6942e-abd1-4d75-9ced-870545972f25
+	sourceLineageTag: [dbo].[tb_empresa]
+
+	column Código
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: db7a7fef-178d-4701-9980-cf1e5f25ebb2
+		sourceLineageTag: Código
+		summarizeBy: none
+		sourceColumn: Código
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPJ
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2a7dfac1-a571-406a-9cc3-83ed687fe793
+		sourceLineageTag: CNPJ
+		summarizeBy: none
+		sourceColumn: CNPJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidade
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 10a6e83d-afcc-44da-b036-eae4513ea438
+		sourceLineageTag: Unidade
+		summarizeBy: none
+		sourceColumn: Unidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shopping
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3fea9a1b-83de-433b-82a4-f668f07d92cc
+		sourceLineageTag: Shopping
+		summarizeBy: none
+		sourceColumn: Shopping
+
+		annotation SummarizationSetBy = Automatic
+
+	column Empresa
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 55d8eae4-58b0-4a68-8b03-92d222753fdf
+		sourceLineageTag: Empresa
+		summarizeBy: none
+		sourceColumn: Empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Portfólio
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 487e7b42-7abb-4f2d-9711-3fd52a6d164e
+		sourceLineageTag: Portfólio
+		summarizeBy: none
+		sourceColumn: Portfólio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Administração
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4ae7edbf-87d1-4ff5-8347-6db1d5d5f2c4
+		sourceLineageTag: Administração
+		summarizeBy: none
+		sourceColumn: Administração
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e7d09b66-4568-421e-a0aa-ccb7ef089799
+		sourceLineageTag: Nome
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Região
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 80ca0e3a-babb-4a83-82a6-70c9ff9d5067
+		sourceLineageTag: Região
+		summarizeBy: none
+		sourceColumn: Região
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Razão Social'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 176680ec-6de6-4330-9d11-687b20e2a857
+		sourceLineageTag: Razão Social
+		summarizeBy: none
+		sourceColumn: Razão Social
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome diretor'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6997b3e7-1eb7-4b33-917b-b934606e08d1
+		sourceLineageTag: Nome diretor
+		summarizeBy: none
+		sourceColumn: Nome diretor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CPF diretor'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0db81b48-d739-49c0-b573-24553e27c22e
+		sourceLineageTag: CPF diretor
+		summarizeBy: none
+		sourceColumn: CPF diretor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Endereço - UF'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 66a92135-805b-4cd3-8dc9-93a9fdf48727
+		sourceLineageTag: Endereço - UF
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: Endereço - UF
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e886995e-389b-476c-ba1a-4a3b21308220
+		sourceLineageTag: Estado
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: Estado
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_empresa = entity
+		mode: directLake
+		source
+			entityName: tb_empresa
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

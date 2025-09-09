@@ -1,0 +1,56 @@
+table tb_calendario
+	lineageTag: ecc769f3-241a-47f6-98ad-d518c0ac1038
+	sourceLineageTag: [dbo].[tb_calendario]
+
+	column DATA
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 48db9bca-8e92-4bf3-8e6c-6ed1548252f3
+		sourceLineageTag: DATA
+		summarizeBy: none
+		sourceColumn: DATA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 197abd03-d5ff-4833-87d0-76b86f4ba828
+		sourceLineageTag: ANO
+		summarizeBy: sum
+		sourceColumn: ANO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES_ANO
+		dataType: string
+		sourceProviderType: varchar(47)
+		lineageTag: 1ae04d5a-c3b0-4907-a45f-517d32bb04f0
+		sourceLineageTag: MES_ANO
+		summarizeBy: none
+		sourceColumn: MES_ANO
+
+		annotation SummarizationSetBy = Automatic
+
+	column INICIO_MES
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 76df589a-fa83-4775-a7d6-c736d5e899dc
+		sourceLineageTag: INICIO_MES
+		summarizeBy: none
+		sourceColumn: INICIO_MES
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_calendario = entity
+		mode: directLake
+		source
+			entityName: tb_calendario
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,7 @@
+role 'Daniel Momoli'
+	modelPermission: read
+
+	tablePermission tb_empresa = [Portfólio] == "Daniel Momoli"
+
+	annotation PBI_Id = fcfc2a9cc65445549f1781a68cc36862
+

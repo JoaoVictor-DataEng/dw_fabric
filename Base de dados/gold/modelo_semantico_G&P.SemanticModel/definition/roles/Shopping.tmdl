@@ -1,0 +1,9 @@
+role Shopping
+	modelPermission: read
+
+	tablePermission tb_empresa = [Portfólio] == "Shopping"
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] == "DIRETORIA DE OPERAÇÕES"
+
+	annotation PBI_Id = aa1ff56c0b7d4467ac328c53751c0b16
+

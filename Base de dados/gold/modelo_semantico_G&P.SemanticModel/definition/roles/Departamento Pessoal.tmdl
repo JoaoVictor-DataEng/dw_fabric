@@ -1,0 +1,13 @@
+role 'Departamento Pessoal'
+	modelPermission: read
+
+	tablePermission tb_colaboradores =
+			IF(
+			    -- GERENTE DO DEPARTAMENTO PESSOAL
+			    CONTAINSSTRING([PATH_HIERARQUIA], "ANDRE LUIZ ALVES DE FRANCA"),
+			    TRUE(),
+			    FALSE()
+			)
+
+	annotation PBI_Id = 08b5a5bf66ab4c199899b45ba4d001cd
+

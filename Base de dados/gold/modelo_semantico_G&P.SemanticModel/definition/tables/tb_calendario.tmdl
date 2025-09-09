@@ -1,0 +1,81 @@
+table tb_calendario
+	lineageTag: 1cdc5309-4f3a-4397-8819-abd2f9332c6c
+	sourceLineageTag: [dbo].[tb_calendario]
+
+	column DATA
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: e5586a38-dbdf-4715-b10b-4cfadebf8868
+		sourceLineageTag: DATA
+		summarizeBy: none
+		sourceColumn: DATA
+
+		changedProperty = FormatString
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ANO
+		dataType: string
+		sourceProviderType: int
+		lineageTag: 1152638d-c6a2-4728-8113-f1ae2f16cb8b
+		sourceLineageTag: ANO
+		summarizeBy: none
+		sourceColumn: ANO
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DataType
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES_ANO
+		dataType: string
+		sourceProviderType: varchar(25)
+		lineageTag: 1215358a-387d-4491-be32-b8458eec19d3
+		sourceLineageTag: MES_ANO
+		summarizeBy: none
+		sourceColumn: MES_ANO
+		sortByColumn: INICIO_MES
+
+		changedProperty = SortByColumn
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column INICIO_MES
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d57aca60-866e-4c83-8074-a8a8174f2ea9
+		sourceLineageTag: INICIO_MES
+		summarizeBy: none
+		sourceColumn: INICIO_MES
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition tb_calendario = entity
+		mode: directLake
+		source
+			entityName: tb_calendario
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

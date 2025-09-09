@@ -1,0 +1,13 @@
+role Mídia
+	modelPermission: read
+
+	tablePermission tb_colaboradores =
+			IF(
+			    -- DIRETOR DA HELLO QUE É O RESPONSÁVEL PELA PARTE DE MÍDIA
+			    CONTAINSSTRING([PATH_HIERARQUIA], "RAFAEL KENJI SAITO"),
+			    TRUE(),
+			    FALSE()
+			)
+
+	annotation PBI_Id = 1d9bb64e37e846b3b07d53c79b4e36cf
+

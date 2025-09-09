@@ -1,0 +1,7 @@
+role 'Ricardo Visco'
+	modelPermission: read
+
+	tablePermission tb_empresa = [Portfólio] == "Ricardo Visco"
+
+	annotation PBI_Id = 71a44998ef6f4b6a9c24775738c699cd
+

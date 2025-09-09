@@ -1,0 +1,395 @@
+table tb_vagas_gupy
+	lineageTag: 0be79653-6717-4c56-81b9-0ea757c827cb
+	sourceLineageTag: [dbo].[tb_vagas_gupy]
+
+	measure Vagas_Gupy =
+			
+			VAR CALCULO = DISTINCTCOUNTNOBLANK(tb_vagas_gupy[Requisição])
+			RETURN
+			IF(
+			    ISBLANK(CALCULO), 0,
+			    CALCULO)
+		formatString: 0
+		lineageTag: 3931f070-460a-4d56-8ce2-65ae0219c8bf
+
+		changedProperty = Name
+
+	measure Vagas_Aprendiz_Gupy =
+			
+			CALCULATE(
+			    tb_vagas_gupy[Vagas_Gupy],
+			    tb_vagas_gupy[Objetivo_da_vaga] = "Aprendiz")
+		formatString: 0
+		lineageTag: 7e4b071b-ca70-4e44-a33d-301574af362e
+
+		changedProperty = Name
+
+	measure Vagas_PCD_Gupy =
+			
+			CALCULATE(
+			    tb_vagas_gupy[Vagas_Gupy],
+			    tb_vagas_gupy[PCD] = "Obrigatório")
+		formatString: 0
+		lineageTag: 36dc5ce2-0a41-4162-895c-cf64dbebec61
+
+		changedProperty = Name
+
+	measure Média_dias_gupy = DIVIDE(SUM(tb_vagas_gupy[Dias_abertos]),[Vagas_Gupy],0)
+		lineageTag: a3b33017-5184-4d31-8acc-76960b54677a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure +45_dias_gupy = CALCULATE([Vagas_Gupy],tb_vagas_gupy[Dias_abertos]>45)
+		formatString: 0
+		lineageTag: d59deac8-0de6-439c-ab76-8e1b927bc9ea
+
+		changedProperty = Name
+
+	measure Vagas_Auditoria =
+			
+			VAR CALCULO =
+			CALCULATE(
+			    DISTINCTCOUNTNOBLANK(tb_vagas_gupy[Requisição]),
+			    CONTAINSSTRING(tb_vagas_gupy[Cargo], "AUDITOR"))
+			
+			RETURN IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: 0
+		lineageTag: 30b9a73d-1be1-46df-b224-4417d64e05f1
+
+	column Requisição
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9ac1805f-abd6-49f1-90ed-5c02b2d3ccf9
+		sourceLineageTag: Requisição
+		summarizeBy: none
+		sourceColumn: Requisição
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status_da_Vaga
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cbcf2174-f36b-45f0-8f3b-67743a6b2611
+		sourceLineageTag: Status_da_Vaga
+		summarizeBy: none
+		sourceColumn: Status_da_Vaga
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shopping
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e5880a4b-f23f-44fc-bc55-ccc2cac28b46
+		sourceLineageTag: Shopping
+		summarizeBy: none
+		sourceColumn: Shopping
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gerente_da_vaga
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 43edc0b5-d5b3-4197-97dc-bd9558605136
+		sourceLineageTag: Gerente_da_vaga
+		summarizeBy: none
+		sourceColumn: Gerente_da_vaga
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Gerente
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 46a15c09-e24e-4757-a42d-d2986648772d
+		sourceLineageTag: Email_Gerente
+		summarizeBy: none
+		sourceColumn: Email_Gerente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cargo
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3fd320f6-1b73-47f9-8335-180436f6e5d6
+		sourceLineageTag: Cargo
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_de_Publicação
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e7ae41a3-e918-4a28-8c4e-8927fb295dc2
+		sourceLineageTag: Tipo_de_Publicação
+		summarizeBy: none
+		sourceColumn: Tipo_de_Publicação
+
+		annotation SummarizationSetBy = Automatic
+
+	column Página_de_Carreiras
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bbad389e-2304-4bc5-96b0-2f15e4e866e6
+		sourceLineageTag: Página_de_Carreiras
+		summarizeBy: none
+		sourceColumn: Página_de_Carreiras
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recrutador_da_vaga
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0448386c-dd99-4deb-bd9e-4d655bc51522
+		sourceLineageTag: Recrutador_da_vaga
+		summarizeBy: none
+		sourceColumn: Recrutador_da_vaga
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_de_Criação
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 1b29c3d9-c713-4532-9d7f-609ebdfc7e61
+		sourceLineageTag: Data_de_Criação
+		summarizeBy: none
+		sourceColumn: Data_de_Criação
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Data_de_Publicação
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 053b8191-8e3f-4a0b-b71b-eab9600842de
+		sourceLineageTag: Data_de_Publicação
+		summarizeBy: none
+		sourceColumn: Data_de_Publicação
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Data_de_Fechamento
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: aa6916c0-931f-4a32-a35a-0e4a151dcb50
+		sourceLineageTag: Data_de_Fechamento
+		summarizeBy: none
+		sourceColumn: Data_de_Fechamento
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Última_Data_do_Congelamento
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8b6e7ee6-19da-4a2c-808f-a6c22dc2a0a9
+		sourceLineageTag: Última_Data_do_Congelamento
+		summarizeBy: none
+		sourceColumn: Última_Data_do_Congelamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Última_Data_de_Descongelamento
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 51647e89-e4d0-4824-bb10-225c7d3fcfc9
+		sourceLineageTag: Última_Data_de_Descongelamento
+		summarizeBy: none
+		sourceColumn: Última_Data_de_Descongelamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_de_cancelamento
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 350e04d7-30c0-4532-8b25-1a6459430245
+		sourceLineageTag: Data_de_cancelamento
+		summarizeBy: none
+		sourceColumn: Data_de_cancelamento
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Objetivo_da_vaga
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 649764e5-1cc6-4743-9397-91d040cb6a89
+		sourceLineageTag: Objetivo_da_vaga
+		summarizeBy: none
+		sourceColumn: Objetivo_da_vaga
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5c2bd593-9858-4b87-b8a0-118644d3aee5
+		sourceLineageTag: PCD
+		summarizeBy: none
+		sourceColumn: PCD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Diretoria_Executiva
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9a363b88-d010-470a-a275-15b1249eac48
+		sourceLineageTag: Diretoria_Executiva
+		summarizeBy: none
+		sourceColumn: Diretoria_Executiva
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_de_recrutamento
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 84ea7a0b-17a2-4871-89f2-c1104a6855e5
+		sourceLineageTag: Tipo_de_recrutamento
+		summarizeBy: none
+		sourceColumn: Tipo_de_recrutamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Área/Regional
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d2772bdd-cd91-4607-b27d-c24e71210198
+		sourceLineageTag: Área/Regional
+		summarizeBy: none
+		sourceColumn: Área/Regional
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vaga_PCD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f73a2030-3c3c-414c-8906-6b4528f05e33
+		sourceLineageTag: Vaga_PCD
+		summarizeBy: none
+		sourceColumn: Vaga_PCD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Motivo
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 693ad511-798a-4bcf-8baf-c974a1ce3e5f
+		sourceLineageTag: Motivo
+		summarizeBy: none
+		sourceColumn: Motivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dias_abertos
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d8978682-f666-431b-a617-fe5d1b0aa61e
+		sourceLineageTag: Dias_abertos
+		summarizeBy: none
+		sourceColumn: Dias_abertos
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Unidade_negócio
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57dcf333-acc9-4134-8cc6-8f841e4c92a1
+		sourceLineageTag: Unidade_negócio
+		summarizeBy: none
+		sourceColumn: Unidade_negócio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Líder/Não_líder
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 67a937ec-138f-4930-aed0-f7c7eb0ff219
+		sourceLineageTag: Líder/Não_líder
+		summarizeBy: none
+		sourceColumn: Líder/Não_líder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano_publicação_vaga
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5678437b-3155-4a5a-b273-46353c46fe72
+		sourceLineageTag: Ano_publicação_vaga
+		summarizeBy: none
+		sourceColumn: Ano_publicação_vaga
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Mês_publicação_vaga
+		dataType: string
+		sourceProviderType: varchar(25)
+		lineageTag: 63d60ea7-5856-4b2d-87c3-df8fc6581848
+		sourceLineageTag: Mês_publicação_vaga
+		summarizeBy: none
+		sourceColumn: Mês_publicação_vaga
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupo_recrutador
+		dataType: string
+		sourceProviderType: varchar(18)
+		lineageTag: 04663897-2dff-4278-840c-613854338a98
+		sourceLineageTag: Grupo_recrutador
+		summarizeBy: none
+		sourceColumn: Grupo_recrutador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aprendiz_PCD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b469e93e-bdec-4bd8-b2f8-0cfc58ec31f9
+		sourceLineageTag: Aprendiz_PCD
+		summarizeBy: none
+		sourceColumn: Aprendiz_PCD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_vagas_gupy = entity
+		mode: directLake
+		source
+			entityName: tb_vagas_gupy
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

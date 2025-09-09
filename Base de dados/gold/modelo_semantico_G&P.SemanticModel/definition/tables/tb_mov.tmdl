@@ -1,0 +1,157 @@
+table tb_mov
+	lineageTag: 06d4a213-69a8-4065-857c-947d1ba61d02
+	sourceLineageTag: [dbo].[tb_mov]
+
+	measure Movimentações = IF(ISBLANK(COUNTROWS(tb_mov)), 0, COUNTROWS(tb_mov))
+		formatString: 0
+		lineageTag: fa866e4d-2afe-4eec-85ce-6e77010f23ce
+
+		changedProperty = Name
+
+	column Chave
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4d4e9b4f-ac22-4772-8632-10f20c9231ad
+		sourceLineageTag: Chave
+		summarizeBy: none
+		sourceColumn: Chave
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0c42b77c-b447-4332-9d44-2e1037dd000e
+		sourceLineageTag: CPF
+		summarizeBy: none
+		sourceColumn: CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataAlteracao
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: ffaea4f7-d7dc-4aab-9c2b-f8606176a711
+		sourceLineageTag: DataAlteracao
+		summarizeBy: none
+		sourceColumn: DataAlteracao
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Cargo
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 53933f90-97ef-4efc-bc85-cb6f5fb89385
+		sourceLineageTag: Cargo
+		summarizeBy: none
+		sourceColumn: Cargo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 36d60c60-4452-4126-a95f-9558a99d5b42
+		sourceLineageTag: Nome
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataAdmissao
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 27665e55-6da0-4626-89f5-46e22e6410d9
+		sourceLineageTag: DataAdmissao
+		summarizeBy: none
+		sourceColumn: DataAdmissao
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Salário
+		dataType: double
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		sourceProviderType: float
+		lineageTag: 75b2fcf5-14de-45bb-a739-eefd57c78742
+		sourceLineageTag: Salário
+		summarizeBy: none
+		sourceColumn: Salário
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Motivo
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 780c9bea-84a7-4e2c-88d7-5bd1ce116e40
+		sourceLineageTag: Motivo
+		summarizeBy: none
+		sourceColumn: Motivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Variacao
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		sourceProviderType: varchar(8000)
+		lineageTag: 5e796235-c816-4cbe-aa2a-87fa399525be
+		sourceLineageTag: Variacao
+		summarizeBy: none
+		sourceColumn: Variacao
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Chave_Empresa
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 20d0f252-6fdd-4ce2-96c5-13d0444985e4
+		sourceLineageTag: Chave_Empresa
+		summarizeBy: none
+		sourceColumn: Chave_Empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column MES_ANO_ALTERACAO
+		dataType: string
+		sourceProviderType: varchar(8)
+		lineageTag: 258cd918-8641-469b-ac82-12fb22a1f0fc
+		sourceLineageTag: MES_ANO_ALTERACAO
+		summarizeBy: none
+		sourceColumn: MES_ANO_ALTERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_mov = entity
+		mode: directLake
+		source
+			entityName: tb_mov
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

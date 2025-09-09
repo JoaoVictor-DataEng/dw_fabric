@@ -1,0 +1,14 @@
+role 'Inovação e TI'
+	modelPermission: read
+
+	tablePermission tb_colaboradores =
+			IF(
+			    -- DIRETORES DE TI
+			    CONTAINSSTRING([PATH_HIERARQUIA], "LUIZ AUGUSTO MARTINS") ||
+			    CONTAINSSTRING([PATH_HIERARQUIA], "PEDRO VILLARINO MUNIZ DE MELLO"),
+			    TRUE(),
+			    FALSE()
+			)
+
+	annotation PBI_Id = 8fb5dfc09c674cdcbf2fa30689902d00
+

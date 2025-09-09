@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "dataflow_midia",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "tb_estrutura_newco": {
+      "queryId": "4fa5838e-9329-424f-8c74-72d816ea7914",
+      "queryName": "tb_estrutura_newco",
+      "loadEnabled": false
+    },
+    "tb_midia": {
+      "queryId": "6f25524e-5657-4fb3-9f58-f6dd18bf7063",
+      "queryName": "tb_midia",
+      "loadEnabled": false
+    },
+    "tb_cc": {
+      "queryId": "e639badb-3e80-4bd8-923e-904b5d67a59e",
+      "queryName": "tb_cc",
+      "loadEnabled": false
+    },
+    "tb_estrutura_newco_DataDestination": {
+      "queryId": "eed1613d-221a-4b8d-8550-01b242605087",
+      "queryName": "tb_estrutura_newco_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_midia_DataDestination": {
+      "queryId": "866be887-03f4-4160-a904-34828b10977c",
+      "queryName": "tb_midia_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_cc_DataDestination": {
+      "queryId": "4dc01fed-d79a-43c5-9ebf-06140c6a81f0",
+      "queryName": "tb_cc_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"c98a2be7-5027-45a9-bf76-eacb6c0a2cf0\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-ATRAOEONBOARDING",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"37375c2d-b482-46c6-808e-3204d1c1dfa1\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"ec599d58-5457-4701-8634-3f230afc537f\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"a22b3cf0-80b6-4ceb-9bb2-d8fd6d77ee97\"}"
+    }
+  ]
+}

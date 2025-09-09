@@ -1,0 +1,7 @@
+role 'Shoppings administrados'
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [É_SHOPPING_ADM] == "S"
+
+	annotation PBI_Id = 9e013bd6080c44c8a9a6d09378ebf301
+

@@ -1,0 +1,4 @@
+relationship bac7f29c-5406-56a9-8dcb-87238a2e7aaf
+	fromColumn: tb_midia.Localidade
+	toColumn: tb_estrutura_newco.Localidade
+

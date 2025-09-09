@@ -1,0 +1,9 @@
+role 'Desenvolvimento e novos negócios'
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [DIRETORIA] == "DIRETORIA DE DESENVOLVIMENTO E NOVOS NEGÓCIOS"
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] == "DIRETORIA DE DESENVOLVIMENTO E NOVOS NEGÓCIOS"
+
+	annotation PBI_Id = 1896f3795c074153a247e4b78b875b6b
+

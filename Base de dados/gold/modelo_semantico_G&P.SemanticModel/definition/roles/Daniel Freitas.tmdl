@@ -1,0 +1,7 @@
+role 'Daniel Freitas'
+	modelPermission: read
+
+	tablePermission tb_empresa = [Portfólio] == "Daniel Freitas"
+
+	annotation PBI_Id = 310bca4960c5484ea7ec68b6155bc38a
+

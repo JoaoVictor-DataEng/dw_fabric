@@ -1,0 +1,45 @@
+model Model
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DatabaseQuery"]
+
+annotation __PBIService_Versioning_SaveVersion = 769b3d7a-b4d3-49df-ac70-ab1ce3283472
+
+annotation PBI_ProTooling = ["RemoteModeling","WebModelingEdit"]
+
+ref table tb_mov
+ref table tb_calendario
+ref table _Medidas
+ref table tb_empresa
+ref table tb_vagas_gupy
+ref table tb_colaboradores
+
+ref role 'André Lupo'
+ref role 'BP (Juliana Abreu)'
+ref role Comercial
+ref role 'Daniel Freitas'
+ref role 'Daniel Momoli'
+ref role 'Departamento Pessoal'
+ref role 'Desenvolvimento e novos negócios'
+ref role 'Financeiro e RI'
+ref role Helloo
+ref role Holding
+ref role 'Inovação e TI'
+ref role 'Investimentos e M&A'
+ref role Jurídica
+ref role Mídia
+ref role 'Ricardo Visco'
+ref role 'Sergio Pessoa'
+ref role Shopping
+ref role 'Shoppings administrados'
+
+ref cultureInfo en-US
+

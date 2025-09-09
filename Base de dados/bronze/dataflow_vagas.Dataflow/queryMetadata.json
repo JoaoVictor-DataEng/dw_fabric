@@ -1,0 +1,52 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow 1",
+  "queryGroups": [],
+  "documentLocale": "pt-BR",
+  "queriesMetadata": {
+    "tb_vagas_gupy_bronze": {
+      "queryId": "1b85778e-3be5-489b-b1aa-05e1970a1390",
+      "queryName": "tb_vagas_gupy_bronze",
+      "loadEnabled": false
+    },
+    "tb_vagas_gupy_bronze_DataDestination": {
+      "queryId": "c3e5c63e-355a-4c1c-bbc2-195c3c3068a2",
+      "queryName": "tb_vagas_gupy_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"e3aa6a76-eba9-45b6-9c66-ab1e5ad5df03\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"a22b3cf0-80b6-4ceb-9bb2-d8fd6d77ee97\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/grades.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"eac57d54-99c9-4713-9c08-75065dc39192\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/imagens_perfil.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"b20ab284-c68e-4f6d-811c-c4f6c978a1e3\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/de-para_diretorias.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"ba219b1a-b245-4b2f-a213-3e5cc0039917\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/de-para_areas_shopping.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"49766bc0-487b-44a4-a1f1-2ea65a8e5972\"}"
+    }
+  ]
+}

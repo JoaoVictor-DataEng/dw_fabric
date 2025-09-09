@@ -1,0 +1,660 @@
+table tb_colaboradores_hierarquia_ALLOS
+	lineageTag: fbbd5cea-f62b-401e-8d41-5b3b08497bbb
+	sourceLineageTag: [dbo].[tb_colaboradores_hierarquia_ALLOS]
+
+	column ADMISSAO
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3929019d-fc39-45b4-9e33-285a82f1756d
+		sourceLineageTag: ADMISSAO
+		summarizeBy: none
+		sourceColumn: ADMISSAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CARGO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0783ce82-26ba-4725-a8e4-a2ac8c6378ef
+		sourceLineageTag: CARGO
+		summarizeBy: none
+		sourceColumn: CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAUSA_RESCISÃO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 86bc078f-d652-457c-a609-95e753f4b1d4
+		sourceLineageTag: CAUSA_RESCISÃO
+		summarizeBy: none
+		sourceColumn: CAUSA_RESCISÃO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHAVE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fc6052f7-95fc-4bf2-a540-143263306181
+		sourceLineageTag: CHAVE
+		summarizeBy: none
+		sourceColumn: CHAVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CNPJ
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 151e5b92-2660-4b7f-9754-8f9b18ba9d25
+		sourceLineageTag: CNPJ
+		summarizeBy: none
+		sourceColumn: CNPJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_CCUSTO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8474c485-a77c-466e-84fa-b5a9e3fbb42f
+		sourceLineageTag: COD_CCUSTO
+		summarizeBy: none
+		sourceColumn: COD_CCUSTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_EMPRESA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a0fb6c61-36c9-4b81-932c-d395a59bf32e
+		sourceLineageTag: COD_EMPRESA
+		summarizeBy: none
+		sourceColumn: COD_EMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3a24581a-4ad7-42c8-b7e0-99ac03e698ae
+		sourceLineageTag: CPF
+		summarizeBy: none
+		sourceColumn: CPF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPF_GESTOR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 04003cc5-3594-4479-b9a6-009135f2dc56
+		sourceLineageTag: CPF_GESTOR
+		summarizeBy: none
+		sourceColumn: CPF_GESTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEMISSAO
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 90503ad4-871d-43cb-b84f-fb049799eff9
+		sourceLineageTag: DEMISSAO
+		summarizeBy: none
+		sourceColumn: DEMISSAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO_CCUSTO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 908436e5-acba-4747-8efb-0563dc48b339
+		sourceLineageTag: DESCRICAO_CCUSTO
+		summarizeBy: none
+		sourceColumn: DESCRICAO_CCUSTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIRETORIA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 86ea957b-086c-439f-bce6-bda7d4f86b6f
+		sourceLineageTag: DIRETORIA
+		summarizeBy: none
+		sourceColumn: DIRETORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DIRETORIA_N2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 92e2f2d8-fae0-417d-a4db-ab2660972fb7
+		sourceLineageTag: DIRETORIA_N2
+		summarizeBy: none
+		sourceColumn: DIRETORIA_N2
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_INICIO_SITUACAO
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7364c5e4-23bb-41a8-a2af-a1d97a8c118d
+		sourceLineageTag: DT_INICIO_SITUACAO
+		summarizeBy: none
+		sourceColumn: DT_INICIO_SITUACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d3c42f8f-8403-41ad-99eb-181169f40d7f
+		sourceLineageTag: EMAIL
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMPRESA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 61594a7f-283f-417c-b1cd-7ae94bb06060
+		sourceLineageTag: EMPRESA
+		summarizeBy: none
+		sourceColumn: EMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENDEREÇO_COMPLETO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c77e3978-b29c-4b96-b988-3ccb50e96257
+		sourceLineageTag: ENDEREÇO_COMPLETO
+		summarizeBy: none
+		sourceColumn: ENDEREÇO_COMPLETO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FAIXA_GRADE
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 20246cff-214b-4dc6-aadf-5126ae3e0fab
+		sourceLineageTag: FAIXA_GRADE
+		summarizeBy: sum
+		sourceColumn: FAIXA_GRADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FAIXA_GRADE_INDEX
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d19f0dd8-b3ad-46bb-98a2-9094f0590bf3
+		sourceLineageTag: FAIXA_GRADE_INDEX
+		summarizeBy: sum
+		sourceColumn: FAIXA_GRADE_INDEX
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILTRO_TRANSFERÊNCIA
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 42269af6-17f5-485a-a1c0-1cd9e9637311
+		sourceLineageTag: FILTRO_TRANSFERÊNCIA
+		summarizeBy: sum
+		sourceColumn: FILTRO_TRANSFERÊNCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column GESTOR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ca565fd1-0d29-4a95-b4f8-8417a70be65b
+		sourceLineageTag: GESTOR
+		summarizeBy: none
+		sourceColumn: GESTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRADE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d10e6d78-ca05-484d-ba85-d4044691e5fa
+		sourceLineageTag: GRADE
+		summarizeBy: none
+		sourceColumn: GRADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRAU_DE_INSTRUÇÃO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8f095f16-168f-4b87-b69b-d254ec7b999f
+		sourceLineageTag: GRAU_DE_INSTRUÇÃO
+		summarizeBy: none
+		sourceColumn: GRAU_DE_INSTRUÇÃO
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGADO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bb388ff0-47c3-4683-ba5f-0af309127d1c
+		sourceLineageTag: LEGADO
+		summarizeBy: none
+		sourceColumn: LEGADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Link_imagem
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 122a1cee-8f4a-4f4e-8490-d937d3a5906b
+		sourceLineageTag: Link_imagem
+		summarizeBy: none
+		sourceColumn: Link_imagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATRICULA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 986670d3-ff57-4eac-b33b-ce8b2a7569b7
+		sourceLineageTag: MATRICULA
+		summarizeBy: none
+		sourceColumn: MATRICULA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NACIONALIDADE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 935dfc0e-213f-4325-b64c-ed430ea468ae
+		sourceLineageTag: NACIONALIDADE
+		summarizeBy: none
+		sourceColumn: NACIONALIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NASCIMENTO
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d6ba5136-f7f5-458d-be19-91302185ed9b
+		sourceLineageTag: NASCIMENTO
+		summarizeBy: none
+		sourceColumn: NASCIMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEIS_HIERARQUIA
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0cd3407a-fe1a-4599-87c3-534e1781c4be
+		sourceLineageTag: NIVEIS_HIERARQUIA
+		summarizeBy: sum
+		sourceColumn: NIVEIS_HIERARQUIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEL_1
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 931cb7e3-9b04-4b74-9bfa-e6f88ff9a738
+		sourceLineageTag: NIVEL_1
+		summarizeBy: none
+		sourceColumn: NIVEL_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEL_2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9cf0d6b4-f685-4cbb-9321-3c993392b4ea
+		sourceLineageTag: NIVEL_2
+		summarizeBy: none
+		sourceColumn: NIVEL_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEL_3
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3f52d295-9bac-4c27-8bf4-8555d7087f0a
+		sourceLineageTag: NIVEL_3
+		summarizeBy: none
+		sourceColumn: NIVEL_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEL_4
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b792eca2-8d2c-493e-9c93-5aa09dcaef2f
+		sourceLineageTag: NIVEL_4
+		summarizeBy: none
+		sourceColumn: NIVEL_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEL_5
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 477e2e0a-7ddf-442e-a812-861e1b9764cd
+		sourceLineageTag: NIVEL_5
+		summarizeBy: none
+		sourceColumn: NIVEL_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d0216ac1-a1e1-441c-bd4b-52f24764f3a4
+		sourceLineageTag: NOME
+		summarizeBy: none
+		sourceColumn: NOME
+
+		annotation SummarizationSetBy = Automatic
+
+	column ONBOARDING_REGRA
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b1c96f71-9f01-4271-b3c4-94340d57488a
+		sourceLineageTag: ONBOARDING_REGRA
+		summarizeBy: sum
+		sourceColumn: ONBOARDING_REGRA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 346684f2-e1b6-4fe3-9052-21a78b7dd455
+		sourceLineageTag: PCD
+		summarizeBy: none
+		sourceColumn: PCD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PORTFÓLIO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1536251c-3d2a-49db-a9f7-f539f3d764b5
+		sourceLineageTag: PORTFÓLIO
+		summarizeBy: none
+		sourceColumn: PORTFÓLIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RAÇA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 722e2938-53d9-4fd2-b450-616027f9e290
+		sourceLineageTag: RAÇA
+		summarizeBy: none
+		sourceColumn: RAÇA
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGIME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b95bd4eb-d1bf-40ec-b157-8a4c438e7fa5
+		sourceLineageTag: REGIME
+		summarizeBy: none
+		sourceColumn: REGIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALARIO
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c0d68c9e-c8fe-4fe3-beef-e864f20db56d
+		sourceLineageTag: SALARIO
+		summarizeBy: sum
+		sourceColumn: SALARIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SALARIO_100%
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e365bfa3-e76b-4c0e-9c04-2367e9f8c55f
+		sourceLineageTag: SALARIO_100%
+		summarizeBy: sum
+		sourceColumn: SALARIO_100%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEXO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9df94cd9-159f-449c-af69-422381620f2e
+		sourceLineageTag: SEXO
+		summarizeBy: none
+		sourceColumn: SEXO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHOPPING
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 831cbfb2-9b22-4832-aef0-8621affabb90
+		sourceLineageTag: SHOPPING
+		summarizeBy: none
+		sourceColumn: SHOPPING
+
+		annotation SummarizationSetBy = Automatic
+
+	column SITUAÇÃO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 539c4c85-345f-46a2-b775-a85c2987c5c8
+		sourceLineageTag: SITUAÇÃO
+		summarizeBy: none
+		sourceColumn: SITUAÇÃO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shopping_Origem/Destino
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 11971156-5d43-4233-a627-d167ac55f1ff
+		sourceLineageTag: Shopping_Origem/Destino
+		summarizeBy: none
+		sourceColumn: Shopping_Origem/Destino
+
+		annotation SummarizationSetBy = Automatic
+
+	column UF
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e9d929b8-1397-4e41-9197-6b0575ee461e
+		sourceLineageTag: UF
+		summarizeBy: none
+		sourceColumn: UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDADE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ab4d4f30-4173-4778-9db1-4d87116f543f
+		sourceLineageTag: UNIDADE
+		summarizeBy: none
+		sourceColumn: UNIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ÁREA_SHOPPING
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2057bbc5-e330-43a0-985d-cb3e2d67e83d
+		sourceLineageTag: ÁREA_SHOPPING
+		summarizeBy: none
+		sourceColumn: ÁREA_SHOPPING
+
+		annotation SummarizationSetBy = Automatic
+
+	column É_HELLOO
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4f7209e8-63ca-49b1-9980-f6bc6d39af4e
+		sourceLineageTag: É_HELLOO
+		summarizeBy: none
+		sourceColumn: É_HELLOO
+
+		annotation SummarizationSetBy = Automatic
+
+	column É_SHOPPING_ADM
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eb181279-e7ff-429c-b905-2c29f28eec82
+		sourceLineageTag: É_SHOPPING_ADM
+		summarizeBy: none
+		sourceColumn: É_SHOPPING_ADM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: db2181da-db84-4351-8a2d-d06d3a816329
+		sourceLineageTag: Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?
+		summarizeBy: none
+		sourceColumn: Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 631e4185-c17c-49f0-8405-65f772340756
+		sourceLineageTag: Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?
+		summarizeBy: none
+		sourceColumn: Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Você_já_desejou_ter_outra_cor_de_pele?
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a306c87c-63c4-4087-ac9f-46aea91d39dd
+		sourceLineageTag: Você_já_desejou_ter_outra_cor_de_pele?
+		summarizeBy: none
+		sourceColumn: Você_já_desejou_ter_outra_cor_de_pele?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Com_qual_cor_ou_raça_você_se_identifica?
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ac7efb15-a6ed-40ae-a353-0b33c3a27faf
+		sourceLineageTag: Com_qual_cor_ou_raça_você_se_identifica?
+		summarizeBy: none
+		sourceColumn: Com_qual_cor_ou_raça_você_se_identifica?
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPO_CARGO
+		dataType: string
+		sourceProviderType: varchar(22)
+		lineageTag: 3a864e6e-7312-4472-ad92-fe6d0188b5d8
+		sourceLineageTag: GRUPO_CARGO
+		summarizeBy: none
+		sourceColumn: GRUPO_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column LIDERANÇA
+		dataType: string
+		sourceProviderType: varchar(11)
+		lineageTag: 05c8da99-37cc-4e7a-beb1-439b3ae01147
+		sourceLineageTag: LIDERANÇA
+		summarizeBy: none
+		sourceColumn: LIDERANÇA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAMPO
+		dataType: string
+		sourceProviderType: varchar(14)
+		lineageTag: 4933a9e7-5aa2-4795-bab8-8fc5b700bc25
+		sourceLineageTag: CAMPO
+		summarizeBy: none
+		sourceColumn: CAMPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGRA_ATIVOS_TURNOVER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 56e25a4b-a4ce-40b7-b19a-a4d59a3fa1a2
+		sourceLineageTag: REGRA_ATIVOS_TURNOVER
+		summarizeBy: sum
+		sourceColumn: REGRA_ATIVOS_TURNOVER
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGRA_DEMITIDOS_TURNOVER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ea1c0f11-cc3b-45cc-b488-d05d1783ae7b
+		sourceLineageTag: REGRA_DEMITIDOS_TURNOVER
+		summarizeBy: sum
+		sourceColumn: REGRA_DEMITIDOS_TURNOVER
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIVO_TURNOVER
+		dataType: string
+		sourceProviderType: varchar(14)
+		lineageTag: 763190b9-c983-40ee-8e35-b529bf8f8f70
+		sourceLineageTag: MOTIVO_TURNOVER
+		summarizeBy: none
+		sourceColumn: MOTIVO_TURNOVER
+
+		annotation SummarizationSetBy = Automatic
+
+	column INDICE_CARGO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3df91c43-cc65-438e-bdb6-75f05fcd8937
+		sourceLineageTag: INDICE_CARGO
+		summarizeBy: sum
+		sourceColumn: INDICE_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column FAIXA_GRADE(grupos)
+		dataType: string
+		sourceProviderType: varchar(11)
+		lineageTag: 854f669d-e9c6-4935-9834-e29e477f136a
+		sourceLineageTag: FAIXA_GRADE(grupos)
+		summarizeBy: none
+		sourceColumn: FAIXA_GRADE(grupos)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_colaboradores_hierarquia_ALLOS = entity
+		mode: directLake
+		source
+			entityName: tb_colaboradores_hierarquia_ALLOS
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

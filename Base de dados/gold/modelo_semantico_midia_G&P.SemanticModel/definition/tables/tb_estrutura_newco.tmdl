@@ -1,0 +1,74 @@
+table tb_estrutura_newco
+	lineageTag: 97714390-9b8e-4e4d-9df9-82b11dd6474d
+	sourceLineageTag: [dbo].[tb_estrutura_newco]
+
+	column Localidade
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fdc5c423-a228-475d-886e-5b289cdc9dd0
+		sourceLineageTag: Localidade
+		summarizeBy: none
+		sourceColumn: Localidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column cluster
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 751a7309-faa1-46eb-8a28-b0b38e7163b1
+		sourceLineageTag: cluster
+		summarizeBy: none
+		sourceColumn: cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column regional
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c4cbfb0d-dc79-486c-8d58-4ca594f1ae2a
+		sourceLineageTag: regional
+		summarizeBy: none
+		sourceColumn: regional
+
+		annotation SummarizationSetBy = Automatic
+
+	column portfolio
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bce804a3-55e5-4709-a8a0-569e9012f4a0
+		sourceLineageTag: portfolio
+		summarizeBy: none
+		sourceColumn: portfolio
+
+		annotation SummarizationSetBy = Automatic
+
+	column vertical
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c1e2089d-aabb-4e50-95ee-383e33c7ad62
+		sourceLineageTag: vertical
+		summarizeBy: none
+		sourceColumn: vertical
+
+		annotation SummarizationSetBy = Automatic
+
+	column legado
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7da0dbfc-8889-4ebc-ac63-6a1a3ff2005f
+		sourceLineageTag: legado
+		summarizeBy: none
+		sourceColumn: legado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tb_estrutura_newco = entity
+		mode: directLake
+		source
+			entityName: tb_estrutura_newco
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

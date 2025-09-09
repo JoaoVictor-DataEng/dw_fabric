@@ -1,0 +1,6104 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "tb_calendario",
+        "sourceLineageTag": "[dbo].[tb_calendario]",
+        "columns": [
+          {
+            "name": "DATA",
+            "dataType": "dateTime",
+            "sourceColumn": "DATA",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "DATA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ANO",
+            "dataType": "int64",
+            "sourceColumn": "ANO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ANO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MES_ANO",
+            "dataType": "string",
+            "sourceColumn": "MES_ANO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MES_ANO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INICIO_MES",
+            "dataType": "dateTime",
+            "sourceColumn": "INICIO_MES",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "INICIO_MES",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_calendario",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_cc",
+        "sourceLineageTag": "[dbo].[tb_cc]",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "string",
+            "sourceColumn": "Id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cc",
+            "dataType": "string",
+            "sourceColumn": "cc",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_cc",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_colaboradores",
+        "sourceLineageTag": "[dbo].[tb_colaboradores]",
+        "columns": [
+          {
+            "name": "ADMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "ADMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "ADMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CARGO",
+            "dataType": "string",
+            "sourceColumn": "CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAUSA_RESCISÃO",
+            "dataType": "string",
+            "sourceColumn": "CAUSA_RESCISÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAUSA_RESCISÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CEP",
+            "dataType": "string",
+            "sourceColumn": "CEP",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CEP",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CHAVE",
+            "dataType": "string",
+            "sourceColumn": "CHAVE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CHAVE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CIDADE_UF",
+            "dataType": "string",
+            "sourceColumn": "CIDADE_UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CIDADE_UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CNPJ",
+            "dataType": "string",
+            "sourceColumn": "CNPJ",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CNPJ",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "COD_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "COD_EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF",
+            "dataType": "string",
+            "sourceColumn": "CPF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF_GESTOR",
+            "dataType": "string",
+            "sourceColumn": "CPF_GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF_GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DEMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DEMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DEMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DESCRICAO_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "DESCRICAO_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DESCRICAO_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA_N2",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA_N2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA_N2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DT_INICIO_SITUACAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_INICIO_SITUACAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DT_INICIO_SITUACAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMAIL",
+            "dataType": "string",
+            "sourceColumn": "EMAIL",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMAIL",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ENDEREÇO_COMPLETO",
+            "dataType": "string",
+            "sourceColumn": "ENDEREÇO_COMPLETO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ENDEREÇO_COMPLETO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ESTADO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ESTADO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ESTADO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE",
+            "dataType": "double",
+            "sourceColumn": "FAIXA_GRADE",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "FAIXA_GRADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE_INDEX",
+            "dataType": "int64",
+            "sourceColumn": "FAIXA_GRADE_INDEX",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FAIXA_GRADE_INDEX",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FILTRO_TRANSFERÊNCIA",
+            "dataType": "int64",
+            "sourceColumn": "FILTRO_TRANSFERÊNCIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FILTRO_TRANSFERÊNCIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GESTOR",
+            "dataType": "string",
+            "sourceColumn": "GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRADE",
+            "dataType": "string",
+            "sourceColumn": "GRADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUCAO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUCAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUCAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUÇÃO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO",
+            "dataType": "string",
+            "sourceColumn": "LEGADO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO_Ajustado",
+            "dataType": "string",
+            "sourceColumn": "LEGADO_Ajustado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO_Ajustado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Link_imagem",
+            "dataType": "string",
+            "sourceColumn": "Link_imagem",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Link_imagem",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MATRICULA",
+            "dataType": "string",
+            "sourceColumn": "MATRICULA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MATRICULA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MUNICIPIO",
+            "dataType": "string",
+            "sourceColumn": "MUNICIPIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MUNICIPIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NACIONALIDADE",
+            "dataType": "string",
+            "sourceColumn": "NACIONALIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NACIONALIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NASCIMENTO",
+            "dataType": "dateTime",
+            "sourceColumn": "NASCIMENTO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "NASCIMENTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NOME",
+            "dataType": "string",
+            "sourceColumn": "NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ONBOARDING_REGRA",
+            "dataType": "int64",
+            "sourceColumn": "ONBOARDING_REGRA",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ONBOARDING_REGRA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PATH_HIERARQUIA",
+            "dataType": "string",
+            "sourceColumn": "PATH_HIERARQUIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PATH_HIERARQUIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PCD",
+            "dataType": "string",
+            "sourceColumn": "PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PORTFÓLIO",
+            "dataType": "string",
+            "sourceColumn": "PORTFÓLIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PORTFÓLIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIAO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "REGIAO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIAO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIME",
+            "dataType": "string",
+            "sourceColumn": "REGIME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO",
+            "dataType": "double",
+            "sourceColumn": "SALARIO",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO_100%",
+            "dataType": "double",
+            "sourceColumn": "SALARIO_100%",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO_100%",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SEXO",
+            "dataType": "string",
+            "sourceColumn": "SEXO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SEXO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SITUAÇÃO",
+            "dataType": "string",
+            "sourceColumn": "SITUAÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SITUAÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Shopping_Origem/Destino",
+            "dataType": "string",
+            "sourceColumn": "Shopping_Origem/Destino",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Shopping_Origem/Destino",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF",
+            "dataType": "string",
+            "sourceColumn": "UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_NOME",
+            "dataType": "string",
+            "sourceColumn": "UF_NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_REGIAO",
+            "dataType": "string",
+            "sourceColumn": "UF_REGIAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_REGIAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UNIDADE",
+            "dataType": "string",
+            "sourceColumn": "UNIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UNIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ÁREA_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ÁREA_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ÁREA_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_HELLOO",
+            "dataType": "string",
+            "sourceColumn": "É_HELLOO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_HELLOO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_SHOPPING_ADM",
+            "dataType": "string",
+            "sourceColumn": "É_SHOPPING_ADM",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_SHOPPING_ADM",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "dataType": "string",
+            "sourceColumn": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRUPO_CARGO",
+            "dataType": "string",
+            "sourceColumn": "GRUPO_CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRUPO_CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_ESCOLARIDADE",
+            "dataType": "string",
+            "sourceColumn": "GRAU_ESCOLARIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_ESCOLARIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA_MOVER",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA_MOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA_MOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAMPO",
+            "dataType": "string",
+            "sourceColumn": "CAMPO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAMPO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_ATIVOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_ATIVOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_ATIVOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_DEMITIDOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_DEMITIDOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_DEMITIDOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MOTIVO_TURNOVER",
+            "dataType": "string",
+            "sourceColumn": "MOTIVO_TURNOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MOTIVO_TURNOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRUPO_CARGO",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRUPO_CARGO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRUPO_CARGO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRAU_ESCOLARIDADE",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRAU_ESCOLARIDADE",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRAU_ESCOLARIDADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA_AUTODECLARADA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA_AUTODECLARADA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA_AUTODECLARADA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ANO_ADMISSAO",
+            "dataType": "int64",
+            "sourceColumn": "ANO_ADMISSAO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ANO_ADMISSAO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ANO_DEMISSAO",
+            "dataType": "int64",
+            "sourceColumn": "ANO_DEMISSAO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ANO_DEMISSAO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FIM_EXPERIENCIA",
+            "dataType": "dateTime",
+            "sourceColumn": "FIM_EXPERIENCIA",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "FIM_EXPERIENCIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_DIF_SALARIAL",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_DIF_SALARIAL",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_DIF_SALARIAL",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IDADE",
+            "dataType": "string",
+            "sourceColumn": "IDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "IDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_colaboradores",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_colaboradores_hierarquia",
+        "sourceLineageTag": "[dbo].[tb_colaboradores_hierarquia]",
+        "columns": [
+          {
+            "name": "ADMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "ADMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "ADMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CARGO",
+            "dataType": "string",
+            "sourceColumn": "CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAUSA_RESCISÃO",
+            "dataType": "string",
+            "sourceColumn": "CAUSA_RESCISÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAUSA_RESCISÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CHAVE",
+            "dataType": "string",
+            "sourceColumn": "CHAVE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CHAVE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CNPJ",
+            "dataType": "string",
+            "sourceColumn": "CNPJ",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CNPJ",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "COD_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "COD_EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF",
+            "dataType": "string",
+            "sourceColumn": "CPF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF_GESTOR",
+            "dataType": "string",
+            "sourceColumn": "CPF_GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF_GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DEMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DEMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DEMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DESCRICAO_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "DESCRICAO_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DESCRICAO_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA_N2",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA_N2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA_N2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DT_INICIO_SITUACAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_INICIO_SITUACAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DT_INICIO_SITUACAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMAIL",
+            "dataType": "string",
+            "sourceColumn": "EMAIL",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMAIL",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ENDEREÇO_COMPLETO",
+            "dataType": "string",
+            "sourceColumn": "ENDEREÇO_COMPLETO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ENDEREÇO_COMPLETO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE",
+            "dataType": "double",
+            "sourceColumn": "FAIXA_GRADE",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "FAIXA_GRADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE_INDEX",
+            "dataType": "int64",
+            "sourceColumn": "FAIXA_GRADE_INDEX",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FAIXA_GRADE_INDEX",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FILTRO_TRANSFERÊNCIA",
+            "dataType": "int64",
+            "sourceColumn": "FILTRO_TRANSFERÊNCIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FILTRO_TRANSFERÊNCIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GESTOR",
+            "dataType": "string",
+            "sourceColumn": "GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRADE",
+            "dataType": "string",
+            "sourceColumn": "GRADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUÇÃO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO",
+            "dataType": "string",
+            "sourceColumn": "LEGADO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO_Ajustado",
+            "dataType": "string",
+            "sourceColumn": "LEGADO_Ajustado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO_Ajustado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Link_imagem",
+            "dataType": "string",
+            "sourceColumn": "Link_imagem",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Link_imagem",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MATRICULA",
+            "dataType": "string",
+            "sourceColumn": "MATRICULA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MATRICULA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NACIONALIDADE",
+            "dataType": "string",
+            "sourceColumn": "NACIONALIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NACIONALIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NASCIMENTO",
+            "dataType": "dateTime",
+            "sourceColumn": "NASCIMENTO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "NASCIMENTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEIS_HIERARQUIA",
+            "dataType": "int64",
+            "sourceColumn": "NIVEIS_HIERARQUIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "NIVEIS_HIERARQUIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_1",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_2",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_3",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_4",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_4",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_5",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_5",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NOME",
+            "dataType": "string",
+            "sourceColumn": "NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ONBOARDING_REGRA",
+            "dataType": "int64",
+            "sourceColumn": "ONBOARDING_REGRA",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ONBOARDING_REGRA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PCD",
+            "dataType": "string",
+            "sourceColumn": "PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PORTFÓLIO",
+            "dataType": "string",
+            "sourceColumn": "PORTFÓLIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PORTFÓLIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIME",
+            "dataType": "string",
+            "sourceColumn": "REGIME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO",
+            "dataType": "double",
+            "sourceColumn": "SALARIO",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO_100%",
+            "dataType": "double",
+            "sourceColumn": "SALARIO_100%",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO_100%",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SEXO",
+            "dataType": "string",
+            "sourceColumn": "SEXO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SEXO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SITUAÇÃO",
+            "dataType": "string",
+            "sourceColumn": "SITUAÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SITUAÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Shopping_Origem/Destino",
+            "dataType": "string",
+            "sourceColumn": "Shopping_Origem/Destino",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Shopping_Origem/Destino",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF",
+            "dataType": "string",
+            "sourceColumn": "UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UNIDADE",
+            "dataType": "string",
+            "sourceColumn": "UNIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UNIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ÁREA_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ÁREA_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ÁREA_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_HELLOO",
+            "dataType": "string",
+            "sourceColumn": "É_HELLOO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_HELLOO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_SHOPPING_ADM",
+            "dataType": "string",
+            "sourceColumn": "É_SHOPPING_ADM",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_SHOPPING_ADM",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "dataType": "string",
+            "sourceColumn": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRUPO_CARGO",
+            "dataType": "string",
+            "sourceColumn": "GRUPO_CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRUPO_CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAMPO",
+            "dataType": "string",
+            "sourceColumn": "CAMPO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAMPO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_ATIVOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_ATIVOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_ATIVOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_DEMITIDOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_DEMITIDOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_DEMITIDOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MOTIVO_TURNOVER",
+            "dataType": "string",
+            "sourceColumn": "MOTIVO_TURNOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MOTIVO_TURNOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_CARGO",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_CARGO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_CARGO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE(grupos)",
+            "dataType": "string",
+            "sourceColumn": "FAIXA_GRADE(grupos)",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "FAIXA_GRADE(grupos)",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CEP",
+            "dataType": "string",
+            "sourceColumn": "CEP",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CEP",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CIDADE_UF",
+            "dataType": "string",
+            "sourceColumn": "CIDADE_UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CIDADE_UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ESTADO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ESTADO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ESTADO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUCAO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUCAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUCAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MUNICIPIO",
+            "dataType": "string",
+            "sourceColumn": "MUNICIPIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MUNICIPIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIAO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "REGIAO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIAO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_NOME",
+            "dataType": "string",
+            "sourceColumn": "UF_NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_REGIAO",
+            "dataType": "string",
+            "sourceColumn": "UF_REGIAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_REGIAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_ESCOLARIDADE",
+            "dataType": "string",
+            "sourceColumn": "GRAU_ESCOLARIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_ESCOLARIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA_MOVER",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA_MOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA_MOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRUPO_CARGO",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRUPO_CARGO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRUPO_CARGO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRAU_ESCOLARIDADE",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRAU_ESCOLARIDADE",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRAU_ESCOLARIDADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_6",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_6",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_6",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_7",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_7",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_7",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA_AUTODECLARADA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA_AUTODECLARADA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA_AUTODECLARADA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PATH_HIERARQUIA",
+            "dataType": "string",
+            "sourceColumn": "PATH_HIERARQUIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PATH_HIERARQUIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_colaboradores_hierarquia",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_colaboradores_hierarquia_ALLOS",
+        "sourceLineageTag": "[dbo].[tb_colaboradores_hierarquia_ALLOS]",
+        "columns": [
+          {
+            "name": "ADMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "ADMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "ADMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CARGO",
+            "dataType": "string",
+            "sourceColumn": "CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAUSA_RESCISÃO",
+            "dataType": "string",
+            "sourceColumn": "CAUSA_RESCISÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAUSA_RESCISÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CEP",
+            "dataType": "string",
+            "sourceColumn": "CEP",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CEP",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CHAVE",
+            "dataType": "string",
+            "sourceColumn": "CHAVE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CHAVE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CIDADE_UF",
+            "dataType": "string",
+            "sourceColumn": "CIDADE_UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CIDADE_UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CNPJ",
+            "dataType": "string",
+            "sourceColumn": "CNPJ",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CNPJ",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "COD_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "COD_EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF",
+            "dataType": "string",
+            "sourceColumn": "CPF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF_GESTOR",
+            "dataType": "string",
+            "sourceColumn": "CPF_GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF_GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DEMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DEMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DEMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DESCRICAO_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "DESCRICAO_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DESCRICAO_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA_N2",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA_N2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA_N2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DT_INICIO_SITUACAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_INICIO_SITUACAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DT_INICIO_SITUACAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMAIL",
+            "dataType": "string",
+            "sourceColumn": "EMAIL",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMAIL",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ENDEREÇO_COMPLETO",
+            "dataType": "string",
+            "sourceColumn": "ENDEREÇO_COMPLETO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ENDEREÇO_COMPLETO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ESTADO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ESTADO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ESTADO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE",
+            "dataType": "double",
+            "sourceColumn": "FAIXA_GRADE",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "FAIXA_GRADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE_INDEX",
+            "dataType": "int64",
+            "sourceColumn": "FAIXA_GRADE_INDEX",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FAIXA_GRADE_INDEX",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FILTRO_TRANSFERÊNCIA",
+            "dataType": "int64",
+            "sourceColumn": "FILTRO_TRANSFERÊNCIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FILTRO_TRANSFERÊNCIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GESTOR",
+            "dataType": "string",
+            "sourceColumn": "GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRADE",
+            "dataType": "string",
+            "sourceColumn": "GRADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUCAO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUCAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUCAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUÇÃO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO",
+            "dataType": "string",
+            "sourceColumn": "LEGADO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO_Ajustado",
+            "dataType": "string",
+            "sourceColumn": "LEGADO_Ajustado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO_Ajustado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Link_imagem",
+            "dataType": "string",
+            "sourceColumn": "Link_imagem",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Link_imagem",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MATRICULA",
+            "dataType": "string",
+            "sourceColumn": "MATRICULA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MATRICULA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MUNICIPIO",
+            "dataType": "string",
+            "sourceColumn": "MUNICIPIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MUNICIPIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NACIONALIDADE",
+            "dataType": "string",
+            "sourceColumn": "NACIONALIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NACIONALIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NASCIMENTO",
+            "dataType": "dateTime",
+            "sourceColumn": "NASCIMENTO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "NASCIMENTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEIS_HIERARQUIA",
+            "dataType": "int64",
+            "sourceColumn": "NIVEIS_HIERARQUIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "NIVEIS_HIERARQUIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_1",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_2",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_3",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_4",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_4",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_5",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_5",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NOME",
+            "dataType": "string",
+            "sourceColumn": "NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ONBOARDING_REGRA",
+            "dataType": "int64",
+            "sourceColumn": "ONBOARDING_REGRA",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ONBOARDING_REGRA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PCD",
+            "dataType": "string",
+            "sourceColumn": "PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PORTFÓLIO",
+            "dataType": "string",
+            "sourceColumn": "PORTFÓLIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PORTFÓLIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIAO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "REGIAO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIAO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIME",
+            "dataType": "string",
+            "sourceColumn": "REGIME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO",
+            "dataType": "double",
+            "sourceColumn": "SALARIO",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO_100%",
+            "dataType": "double",
+            "sourceColumn": "SALARIO_100%",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO_100%",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SEXO",
+            "dataType": "string",
+            "sourceColumn": "SEXO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SEXO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SITUAÇÃO",
+            "dataType": "string",
+            "sourceColumn": "SITUAÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SITUAÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Shopping_Origem/Destino",
+            "dataType": "string",
+            "sourceColumn": "Shopping_Origem/Destino",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Shopping_Origem/Destino",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF",
+            "dataType": "string",
+            "sourceColumn": "UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_NOME",
+            "dataType": "string",
+            "sourceColumn": "UF_NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_REGIAO",
+            "dataType": "string",
+            "sourceColumn": "UF_REGIAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_REGIAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UNIDADE",
+            "dataType": "string",
+            "sourceColumn": "UNIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UNIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ÁREA_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ÁREA_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ÁREA_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_HELLOO",
+            "dataType": "string",
+            "sourceColumn": "É_HELLOO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_HELLOO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_SHOPPING_ADM",
+            "dataType": "string",
+            "sourceColumn": "É_SHOPPING_ADM",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_SHOPPING_ADM",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "dataType": "string",
+            "sourceColumn": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRUPO_CARGO",
+            "dataType": "string",
+            "sourceColumn": "GRUPO_CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRUPO_CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_ESCOLARIDADE",
+            "dataType": "string",
+            "sourceColumn": "GRAU_ESCOLARIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_ESCOLARIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA_MOVER",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA_MOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA_MOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAMPO",
+            "dataType": "string",
+            "sourceColumn": "CAMPO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAMPO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_ATIVOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_ATIVOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_ATIVOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_DEMITIDOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_DEMITIDOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_DEMITIDOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MOTIVO_TURNOVER",
+            "dataType": "string",
+            "sourceColumn": "MOTIVO_TURNOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MOTIVO_TURNOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRUPO_CARGO",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRUPO_CARGO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRUPO_CARGO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRAU_ESCOLARIDADE",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRAU_ESCOLARIDADE",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRAU_ESCOLARIDADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_CARGO",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_CARGO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_CARGO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE(grupos)",
+            "dataType": "string",
+            "sourceColumn": "FAIXA_GRADE(grupos)",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "FAIXA_GRADE(grupos)",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_6",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_6",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_6",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_7",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_7",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_7",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA_AUTODECLARADA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA_AUTODECLARADA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA_AUTODECLARADA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PATH_HIERARQUIA",
+            "dataType": "string",
+            "sourceColumn": "PATH_HIERARQUIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PATH_HIERARQUIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_colaboradores_hierarquia_ALLOS",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_colaboradores_staging",
+        "sourceLineageTag": "[dbo].[tb_colaboradores_staging]",
+        "columns": [
+          {
+            "name": "ADMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "ADMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "ADMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CARGO",
+            "dataType": "string",
+            "sourceColumn": "CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAUSA_RESCISÃO",
+            "dataType": "string",
+            "sourceColumn": "CAUSA_RESCISÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAUSA_RESCISÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CEP",
+            "dataType": "string",
+            "sourceColumn": "CEP",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CEP",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CHAVE",
+            "dataType": "string",
+            "sourceColumn": "CHAVE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CHAVE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CIDADE_UF",
+            "dataType": "string",
+            "sourceColumn": "CIDADE_UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CIDADE_UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CNPJ",
+            "dataType": "string",
+            "sourceColumn": "CNPJ",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CNPJ",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "COD_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COD_EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "COD_EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COD_EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF",
+            "dataType": "string",
+            "sourceColumn": "CPF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF_GESTOR",
+            "dataType": "string",
+            "sourceColumn": "CPF_GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF_GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DEMISSAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DEMISSAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DEMISSAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DESCRICAO_CCUSTO",
+            "dataType": "string",
+            "sourceColumn": "DESCRICAO_CCUSTO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DESCRICAO_CCUSTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA_N2",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA_N2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA_N2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DT_INICIO_SITUACAO",
+            "dataType": "dateTime",
+            "sourceColumn": "DT_INICIO_SITUACAO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DT_INICIO_SITUACAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMAIL",
+            "dataType": "string",
+            "sourceColumn": "EMAIL",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMAIL",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMPRESA",
+            "dataType": "string",
+            "sourceColumn": "EMPRESA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ENDEREÇO_COMPLETO",
+            "dataType": "string",
+            "sourceColumn": "ENDEREÇO_COMPLETO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ENDEREÇO_COMPLETO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ESTADO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ESTADO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ESTADO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE",
+            "dataType": "double",
+            "sourceColumn": "FAIXA_GRADE",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "FAIXA_GRADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "FAIXA_GRADE_INDEX",
+            "dataType": "int64",
+            "sourceColumn": "FAIXA_GRADE_INDEX",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FAIXA_GRADE_INDEX",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FILTRO_TRANSFERÊNCIA",
+            "dataType": "int64",
+            "sourceColumn": "FILTRO_TRANSFERÊNCIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "FILTRO_TRANSFERÊNCIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GESTOR",
+            "dataType": "string",
+            "sourceColumn": "GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRADE",
+            "dataType": "string",
+            "sourceColumn": "GRADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUCAO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUCAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUCAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_DE_INSTRUÇÃO",
+            "dataType": "string",
+            "sourceColumn": "GRAU_DE_INSTRUÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_DE_INSTRUÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO",
+            "dataType": "string",
+            "sourceColumn": "LEGADO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LEGADO_Ajustado",
+            "dataType": "string",
+            "sourceColumn": "LEGADO_Ajustado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LEGADO_Ajustado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Link_imagem",
+            "dataType": "string",
+            "sourceColumn": "Link_imagem",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Link_imagem",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MATRICULA",
+            "dataType": "string",
+            "sourceColumn": "MATRICULA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MATRICULA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MUNICIPIO",
+            "dataType": "string",
+            "sourceColumn": "MUNICIPIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MUNICIPIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NACIONALIDADE",
+            "dataType": "string",
+            "sourceColumn": "NACIONALIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NACIONALIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NASCIMENTO",
+            "dataType": "dateTime",
+            "sourceColumn": "NASCIMENTO",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "NASCIMENTO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEIS_HIERARQUIA",
+            "dataType": "int64",
+            "sourceColumn": "NIVEIS_HIERARQUIA",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "NIVEIS_HIERARQUIA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_1",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_2",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_3",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_4",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_4",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_5",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_5",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_5",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_6",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_6",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_6",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NIVEL_7",
+            "dataType": "string",
+            "sourceColumn": "NIVEL_7",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NIVEL_7",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NOME",
+            "dataType": "string",
+            "sourceColumn": "NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ONBOARDING_REGRA",
+            "dataType": "int64",
+            "sourceColumn": "ONBOARDING_REGRA",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "ONBOARDING_REGRA",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PATH_HIERARQUIA",
+            "dataType": "string",
+            "sourceColumn": "PATH_HIERARQUIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PATH_HIERARQUIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PCD",
+            "dataType": "string",
+            "sourceColumn": "PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PORTFÓLIO",
+            "dataType": "string",
+            "sourceColumn": "PORTFÓLIO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PORTFÓLIO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIAO_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "REGIAO_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIAO_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGIME",
+            "dataType": "string",
+            "sourceColumn": "REGIME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "REGIME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO",
+            "dataType": "double",
+            "sourceColumn": "SALARIO",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SALARIO_100%",
+            "dataType": "double",
+            "sourceColumn": "SALARIO_100%",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO_100%",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "SEXO",
+            "dataType": "string",
+            "sourceColumn": "SEXO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SEXO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SITUAÇÃO",
+            "dataType": "string",
+            "sourceColumn": "SITUAÇÃO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SITUAÇÃO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Shopping_Origem/Destino",
+            "dataType": "string",
+            "sourceColumn": "Shopping_Origem/Destino",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Shopping_Origem/Destino",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF",
+            "dataType": "string",
+            "sourceColumn": "UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_NOME",
+            "dataType": "string",
+            "sourceColumn": "UF_NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UF_REGIAO",
+            "dataType": "string",
+            "sourceColumn": "UF_REGIAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UF_REGIAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UNIDADE",
+            "dataType": "string",
+            "sourceColumn": "UNIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UNIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ÁREA_SHOPPING",
+            "dataType": "string",
+            "sourceColumn": "ÁREA_SHOPPING",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ÁREA_SHOPPING",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_HELLOO",
+            "dataType": "string",
+            "sourceColumn": "É_HELLOO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_HELLOO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "É_SHOPPING_ADM",
+            "dataType": "string",
+            "sourceColumn": "É_SHOPPING_ADM",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "É_SHOPPING_ADM",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_se_sentiu_desconfortável_em_algum_lugar_por_causa_da_sua_cor?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_ouviu_piadas_por_conta_da_cor_da_sua_pele_ou_do_seu_tipo_de_cabelo?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "dataType": "string",
+            "sourceColumn": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Você_já_desejou_ter_outra_cor_de_pele?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "dataType": "string",
+            "sourceColumn": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Com_qual_cor_ou_raça_você_se_identifica?",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRUPO_CARGO",
+            "dataType": "string",
+            "sourceColumn": "GRUPO_CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRUPO_CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRAU_ESCOLARIDADE",
+            "dataType": "string",
+            "sourceColumn": "GRAU_ESCOLARIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRAU_ESCOLARIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LIDERANÇA_MOVER",
+            "dataType": "string",
+            "sourceColumn": "LIDERANÇA_MOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LIDERANÇA_MOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CAMPO",
+            "dataType": "string",
+            "sourceColumn": "CAMPO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CAMPO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_ATIVOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_ATIVOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_ATIVOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "REGRA_DEMITIDOS_TURNOVER",
+            "dataType": "int64",
+            "sourceColumn": "REGRA_DEMITIDOS_TURNOVER",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "REGRA_DEMITIDOS_TURNOVER",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MOTIVO_TURNOVER",
+            "dataType": "string",
+            "sourceColumn": "MOTIVO_TURNOVER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MOTIVO_TURNOVER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRUPO_CARGO",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRUPO_CARGO",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRUPO_CARGO",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "INDICE_GRAU_ESCOLARIDADE",
+            "dataType": "int64",
+            "sourceColumn": "INDICE_GRAU_ESCOLARIDADE",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "INDICE_GRAU_ESCOLARIDADE",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "RAÇA_AUTODECLARADA",
+            "dataType": "string",
+            "sourceColumn": "RAÇA_AUTODECLARADA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "RAÇA_AUTODECLARADA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_colaboradores_staging",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_empresa",
+        "sourceLineageTag": "[dbo].[tb_empresa]",
+        "columns": [
+          {
+            "name": "Código",
+            "dataType": "string",
+            "sourceColumn": "Código",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Código",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Razão Social",
+            "dataType": "string",
+            "sourceColumn": "Razão Social",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Razão Social",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CNPJ",
+            "dataType": "string",
+            "sourceColumn": "CNPJ",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CNPJ",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Unidade",
+            "dataType": "string",
+            "sourceColumn": "Unidade",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Unidade",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Shopping",
+            "dataType": "string",
+            "sourceColumn": "Shopping",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Shopping",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Empresa",
+            "dataType": "string",
+            "sourceColumn": "Empresa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Empresa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Portfólio",
+            "dataType": "string",
+            "sourceColumn": "Portfólio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Portfólio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nome diretor",
+            "dataType": "string",
+            "sourceColumn": "Nome diretor",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nome diretor",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF diretor",
+            "dataType": "string",
+            "sourceColumn": "CPF diretor",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF diretor",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Administração",
+            "dataType": "string",
+            "sourceColumn": "Administração",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Administração",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nome",
+            "dataType": "string",
+            "sourceColumn": "Nome",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nome",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Região",
+            "dataType": "string",
+            "sourceColumn": "Região",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Região",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Endereço - UF",
+            "dataType": "string",
+            "sourceColumn": "Endereço - UF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Endereço - UF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Estado",
+            "dataType": "string",
+            "sourceColumn": "Estado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Estado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_empresa",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_estrutura_newco",
+        "sourceLineageTag": "[dbo].[tb_estrutura_newco]",
+        "columns": [
+          {
+            "name": "Localidade",
+            "dataType": "string",
+            "sourceColumn": "Localidade",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Localidade",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cluster",
+            "dataType": "int64",
+            "sourceColumn": "cluster",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cluster",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "regional",
+            "dataType": "string",
+            "sourceColumn": "regional",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "regional",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "portfolio",
+            "dataType": "string",
+            "sourceColumn": "portfolio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "portfolio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "vertical",
+            "dataType": "string",
+            "sourceColumn": "vertical",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "vertical",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "legado",
+            "dataType": "string",
+            "sourceColumn": "legado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "legado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_estrutura_newco",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_matriz_de_acessos_tech",
+        "sourceLineageTag": "[dbo].[tb_matriz_de_acessos_tech]",
+        "columns": [
+          {
+            "name": "NOME",
+            "dataType": "string",
+            "sourceColumn": "NOME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NOME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMAIL",
+            "dataType": "string",
+            "sourceColumn": "EMAIL",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMAIL",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CARGO",
+            "dataType": "string",
+            "sourceColumn": "CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GRUPO_CARGO",
+            "dataType": "string",
+            "sourceColumn": "GRUPO_CARGO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GRUPO_CARGO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GESTOR",
+            "dataType": "string",
+            "sourceColumn": "GESTOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "GESTOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DIRETORIA",
+            "dataType": "string",
+            "sourceColumn": "DIRETORIA",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DIRETORIA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UNIDADE",
+            "dataType": "string",
+            "sourceColumn": "UNIDADE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UNIDADE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_matriz_de_acessos_tech",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_midia",
+        "sourceLineageTag": "[dbo].[tb_midia]",
+        "columns": [
+          {
+            "name": "Codigo vaga",
+            "dataType": "string",
+            "sourceColumn": "Codigo vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Codigo vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Localidade",
+            "dataType": "string",
+            "sourceColumn": "Localidade",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Localidade",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Data abertura",
+            "dataType": "dateTime",
+            "sourceColumn": "Data abertura",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Data abertura",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Data admissão",
+            "dataType": "dateTime",
+            "sourceColumn": "Data admissão",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Data admissão",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Status processo",
+            "dataType": "string",
+            "sourceColumn": "Status processo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Status processo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Colaborador",
+            "dataType": "string",
+            "sourceColumn": "Colaborador",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Colaborador",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Status vaga",
+            "dataType": "string",
+            "sourceColumn": "Status vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Status vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Função",
+            "dataType": "string",
+            "sourceColumn": "Função",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Função",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Tipo de recrutamento",
+            "dataType": "string",
+            "sourceColumn": "Tipo de recrutamento",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Tipo de recrutamento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Salário",
+            "dataType": "string",
+            "sourceColumn": "Salário",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Salário",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "midia",
+            "dataType": "string",
+            "sourceColumn": "midia",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "midia",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "legado",
+            "dataType": "string",
+            "sourceColumn": "legado",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "legado",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Colaborador Substituído",
+            "dataType": "string",
+            "sourceColumn": "Colaborador Substituído",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Colaborador Substituído",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Recrutador_a_Id",
+            "dataType": "string",
+            "sourceColumn": "Recrutador_a_Id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Recrutador_a_Id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Recrutador_a_StringId",
+            "dataType": "string",
+            "sourceColumn": "Recrutador_a_StringId",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Recrutador_a_StringId",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Gestor",
+            "dataType": "string",
+            "sourceColumn": "Gestor",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Gestor",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "observacoes",
+            "dataType": "string",
+            "sourceColumn": "observacoes",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "observacoes",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Status_ID",
+            "dataType": "int64",
+            "sourceColumn": "Status_ID",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Status_ID",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_midia",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_mov",
+        "sourceLineageTag": "[dbo].[tb_mov]",
+        "columns": [
+          {
+            "name": "Chave",
+            "dataType": "string",
+            "sourceColumn": "Chave",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Chave",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Chave_Empresa",
+            "dataType": "string",
+            "sourceColumn": "Chave_Empresa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Chave_Empresa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CPF",
+            "dataType": "string",
+            "sourceColumn": "CPF",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CPF",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataAlteracao",
+            "dataType": "dateTime",
+            "sourceColumn": "DataAlteracao",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DataAlteracao",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cargo",
+            "dataType": "string",
+            "sourceColumn": "Cargo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cargo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nome",
+            "dataType": "string",
+            "sourceColumn": "Nome",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nome",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataAdmissao",
+            "dataType": "dateTime",
+            "sourceColumn": "DataAdmissao",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "DataAdmissao",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Salário",
+            "dataType": "double",
+            "sourceColumn": "Salário",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Salário",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Motivo",
+            "dataType": "string",
+            "sourceColumn": "Motivo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Motivo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Variacao",
+            "dataType": "double",
+            "sourceColumn": "Variacao",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Variacao",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "MES_ANO_ALTERACAO",
+            "dataType": "string",
+            "sourceColumn": "MES_ANO_ALTERACAO",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MES_ANO_ALTERACAO",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_mov",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "tb_vagas_gupy",
+        "sourceLineageTag": "[dbo].[tb_vagas_gupy]",
+        "columns": [
+          {
+            "name": "Requisição",
+            "dataType": "string",
+            "sourceColumn": "Requisição",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Requisição",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Status_da_Vaga",
+            "dataType": "string",
+            "sourceColumn": "Status_da_Vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Status_da_Vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Shopping",
+            "dataType": "string",
+            "sourceColumn": "Shopping",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Shopping",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Gerente_da_vaga",
+            "dataType": "string",
+            "sourceColumn": "Gerente_da_vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Gerente_da_vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Email_Gerente",
+            "dataType": "string",
+            "sourceColumn": "Email_Gerente",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Email_Gerente",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cargo",
+            "dataType": "string",
+            "sourceColumn": "Cargo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cargo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Tipo_de_Publicação",
+            "dataType": "string",
+            "sourceColumn": "Tipo_de_Publicação",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Tipo_de_Publicação",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Página_de_Carreiras",
+            "dataType": "string",
+            "sourceColumn": "Página_de_Carreiras",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Página_de_Carreiras",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Recrutador_da_vaga",
+            "dataType": "string",
+            "sourceColumn": "Recrutador_da_vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Recrutador_da_vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Data_de_Criação",
+            "dataType": "dateTime",
+            "sourceColumn": "Data_de_Criação",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Data_de_Criação",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Data_de_Publicação",
+            "dataType": "dateTime",
+            "sourceColumn": "Data_de_Publicação",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Data_de_Publicação",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Data_de_Fechamento",
+            "dataType": "dateTime",
+            "sourceColumn": "Data_de_Fechamento",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Data_de_Fechamento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Última_Data_do_Congelamento",
+            "dataType": "dateTime",
+            "sourceColumn": "Última_Data_do_Congelamento",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Última_Data_do_Congelamento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Última_Data_de_Descongelamento",
+            "dataType": "dateTime",
+            "sourceColumn": "Última_Data_de_Descongelamento",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Última_Data_de_Descongelamento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Data_de_cancelamento",
+            "dataType": "dateTime",
+            "sourceColumn": "Data_de_cancelamento",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "Data_de_cancelamento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Objetivo_da_vaga",
+            "dataType": "string",
+            "sourceColumn": "Objetivo_da_vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Objetivo_da_vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PCD",
+            "dataType": "string",
+            "sourceColumn": "PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Diretoria_Executiva",
+            "dataType": "string",
+            "sourceColumn": "Diretoria_Executiva",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Diretoria_Executiva",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Tipo_de_recrutamento",
+            "dataType": "string",
+            "sourceColumn": "Tipo_de_recrutamento",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Tipo_de_recrutamento",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Área/Regional",
+            "dataType": "string",
+            "sourceColumn": "Área/Regional",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Área/Regional",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Vaga_PCD",
+            "dataType": "string",
+            "sourceColumn": "Vaga_PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Vaga_PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Motivo",
+            "dataType": "string",
+            "sourceColumn": "Motivo",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Motivo",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dias_abertos",
+            "dataType": "int64",
+            "sourceColumn": "Dias_abertos",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Dias_abertos",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Unidade_negócio",
+            "dataType": "string",
+            "sourceColumn": "Unidade_negócio",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Unidade_negócio",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Líder/Não_líder",
+            "dataType": "string",
+            "sourceColumn": "Líder/Não_líder",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Líder/Não_líder",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Ano_publicação_vaga",
+            "dataType": "int64",
+            "sourceColumn": "Ano_publicação_vaga",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Ano_publicação_vaga",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Mês_publicação_vaga",
+            "dataType": "string",
+            "sourceColumn": "Mês_publicação_vaga",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Mês_publicação_vaga",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Grupo_recrutador",
+            "dataType": "string",
+            "sourceColumn": "Grupo_recrutador",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Grupo_recrutador",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Aprendiz_PCD",
+            "dataType": "string",
+            "sourceColumn": "Aprendiz_PCD",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Aprendiz_PCD",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "tb_vagas_gupy",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

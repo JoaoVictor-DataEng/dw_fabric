@@ -1,0 +1,9 @@
+role Jurídica
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [DIRETORIA] == "DIRETORIA JURÍDICA"
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] == "DIRETORIA JURÍDICA"
+
+	annotation PBI_Id = 31a4fdef66924301bc5ef79d2a26c8b2
+

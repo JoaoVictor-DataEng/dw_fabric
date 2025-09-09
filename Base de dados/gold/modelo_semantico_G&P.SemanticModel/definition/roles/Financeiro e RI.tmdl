@@ -1,0 +1,9 @@
+role 'Financeiro e RI'
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [DIRETORIA] == "DIRETORIA FINANCEIRA E RI"
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] == "DIRETORIA FINANCEIRA E RI"
+
+	annotation PBI_Id = b7073f9783944f06ab96f90de0007ed2
+

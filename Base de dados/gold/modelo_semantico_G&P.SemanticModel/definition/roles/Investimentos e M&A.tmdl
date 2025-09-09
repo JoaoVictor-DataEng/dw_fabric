@@ -1,0 +1,9 @@
+role 'Investimentos e M&A'
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [DIRETORIA] == "DIRETORIA DE INVESTIMENTOS E M&A"
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] == "DIRETORIA DE INVESTIMENTOS E M&A"
+
+	annotation PBI_Id = df31f1f2c23746ef81e72bb351eb3f1b
+

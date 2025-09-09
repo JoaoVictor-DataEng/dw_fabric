@@ -1,0 +1,403 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "68d25d59-2c03-ace5-40f4-6e86954d8c61",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_colaboradores_bronze_to_silver",
+        "dependsOn": [
+          {
+            "activity": "tb_success_bronze_to_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "tb_colaboradores_helloo",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "0793e486-cc09-9fa1-4a3e-0cbdf56bb8e9",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_mov_bronze_to_silver",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "d4673928-56c8-947e-4d6a-52b2433aace1",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_calendario_gold",
+        "dependsOn": [
+          {
+            "activity": "tb_colaboradores_silver_to_gold",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "ee91ddb6-dfc0-9ed9-411f-3b12024002e6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_colaboradores_silver_to_gold",
+        "dependsOn": [
+          {
+            "activity": "tb_colaboradores_staging",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "post",
+          "groupId": "bba0219c-62af-4fa9-a4da-84977313ebc8",
+          "datasetId": "167b6ab3-8300-4e57-88d9-050e770aeaa1",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "tb_mov"
+            },
+            {
+              "table": "tb_calendario"
+            },
+            {
+              "table": "_Medidas"
+            },
+            {
+              "table": "tb_colaboradores"
+            },
+            {
+              "table": "tb_empresa"
+            },
+            {
+              "table": "tb_vagas_gupy"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "c2ca7e2b-f769-4f22-9ea7-4a3d5a246db0"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "modelo_semantico_GeP",
+        "dependsOn": [
+          {
+            "activity": "tb_calendario_gold",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "tb_mov_silver_to_gold",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "tb_empresas",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "tb_colaboradores_silver_to_gold_hierarquia",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "51db40e6-7362-a924-40aa-ca3f43119f51",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_mov_silver_to_gold",
+        "dependsOn": [
+          {
+            "activity": "tb_mov_bronze_to_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9e926f5c-d8c5-ba99-43b2-f4027a63c53e",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_success_bronze_to_silver",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "0d94a6cf-37fa-9315-4d71-b6af4ced438e",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_colaboradores_helloo",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9dd9bf03-0d8f-8c1f-48c0-401bb61f2a8b",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_empresas",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "e6dd8874-c156-99ea-4d70-880b63e3250a",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Dataflow1",
+        "dependsOn": []
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "post",
+          "groupId": "bba0219c-62af-4fa9-a4da-84977313ebc8",
+          "datasetId": "167b6ab3-8300-4e57-88d9-050e770aeaa1",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "tb_mov"
+            },
+            {
+              "table": "tb_calendario"
+            },
+            {
+              "table": "_Medidas"
+            },
+            {
+              "table": "tb_colaboradores"
+            },
+            {
+              "table": "tb_empresa"
+            },
+            {
+              "table": "tb_vagas_gupy"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "c2ca7e2b-f769-4f22-9ea7-4a3d5a246db0"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "modelo_semantico_GeP_hierarquia",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "modelo_semantico_GeP",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "114daafd-24ae-833a-4fb5-a3af962e45b0",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_colaboradores_staging",
+        "dependsOn": [
+          {
+            "activity": "tb_colaboradores_bronze_to_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9b6fa723-1125-97da-471d-eb6b7db4112f",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_colaboradores_silver_to_gold_hierarquia",
+        "dependsOn": [
+          {
+            "activity": "tb_colaboradores_staging",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "c293e960-591d-8dfe-43ec-bef7b51bdd96",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_matriz_de_acessos_tech",
+        "dependsOn": [
+          {
+            "activity": "tb_colaboradores_silver_to_gold",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

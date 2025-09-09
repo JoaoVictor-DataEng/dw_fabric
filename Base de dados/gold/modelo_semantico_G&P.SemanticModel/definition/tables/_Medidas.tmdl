@@ -1,0 +1,481 @@
+table _Medidas
+	lineageTag: 920ce6db-2f5b-458b-aa05-c3b0f5725fbe
+
+	measure SHOPPINGS = CALCULATE(DISTINCTCOUNT(tb_empresa[Shopping]),tb_empresa[Unidade] = "Shopping")
+		formatString: 0
+		lineageTag: 4f711762-50ac-4327-a793-cd3ca56fd974
+
+	measure 'TEXTO HEADCOUNT' =
+			
+			"HEADCOUNT EM " &
+			UPPER(
+			    FORMAT(
+			        MAX(tb_calendario[DATA]), "mmmm/yy"
+			    )
+			)
+		displayFolder: TEXTO
+		lineageTag: 32ff9d1f-46ab-4450-96b6-1818ee338949
+
+	measure MÉDIA_SALÁRIO =
+			
+			VAR CALCULO =
+			CALCULATE(
+			    AVERAGE(tb_colaboradores[SALARIO]),
+			        tb_colaboradores[DEMISSAO]=BLANK())
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		lineageTag: 0b802000-f87f-434e-952f-6f8038ac3487
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'DIF SALARIAL' = ```
+			
+			VAR DIFSALAMASC = 
+			CALCULATE(
+			            CALCULATE(
+			                [MÉDIA_SALÁRIO],
+			                FILTER(
+			                    tb_colaboradores,
+			                    tb_colaboradores[SEXO] = "MASCULINO"
+			                    )
+			                ),
+			            ALL(
+			                tb_colaboradores[SEXO]
+			                )
+			            )
+			 VAR DIFSALAFEM = 
+			CALCULATE(
+			            CALCULATE(
+			                [MÉDIA_SALÁRIO],
+			                FILTER(
+			                    tb_colaboradores,
+			                    tb_colaboradores[SEXO] = "FEMININO"
+			                    )
+			                ),
+			            ALL(
+			                tb_colaboradores[SEXO]
+			                )
+			            ) 
+			VAR DIFTOTAL = DIVIDE(DIFSALAMASC,DIFSALAFEM,0)-1            
+			     RETURN 
+			        IF(DIVIDE(DIFSALAMASC,DIFSALAFEM,0)-1 =-1,0,DIVIDE(DIFSALAMASC,DIFSALAFEM,0)-1    )
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d51da1d7-d7a3-4ef2-8514-93913b099af4
+
+	measure 'ADMITIDOS TURNOVER' = CALCULATE([ADMITIDOS], tb_colaboradores[REGRA_ATIVOS_TURNOVER] = TRUE())
+		formatString: 0
+		displayFolder: TURNOVER
+		lineageTag: 9a60fadd-7d1b-49a7-9755-48065b24617e
+
+	measure 'DEMITIDOS TURNOVER' = CALCULATE([DEMITIDOS],tb_colaboradores[REGRA_DEMITIDOS_TURNOVER] = TRUE())
+		formatString: 0
+		displayFolder: TURNOVER
+		lineageTag: 54232a53-f206-472d-8163-2dab9f931448
+
+	measure 'HEADCOUNT MÉDIO' =
+			
+			VAR CALEND = VALUES(tb_calendario[MES_ANO])
+			RETURN
+			AVERAGEX(
+			    CALEND, [HEADCOUNT]
+			)
+		formatString: #,0
+		displayFolder: HEADCOUNT
+		lineageTag: 42bdd3c0-785e-425d-9c2b-2f2630f9322e
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'HEADCOUNT MÉDIO TURNOVER' =
+			
+			CALCULATE([HEADCOUNT MÉDIO], tb_colaboradores[REGRA_ATIVOS_TURNOVER] = TRUE())
+		formatString: #,0
+		displayFolder: TURNOVER
+		lineageTag: d316e018-6ecb-4700-b86b-79b8baa1bd16
+
+	measure TURNOVER =
+			
+			VAR CALCULO =
+			DIVIDE(
+			        DIVIDE(
+			            ([ADMITIDOS TURNOVER]+[DEMITIDOS TURNOVER]),2,0), [HEADCOUNT MÉDIO TURNOVER],0)
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: TURNOVER
+		lineageTag: a19280fb-4cec-45de-8101-b8b58dd54bfc
+
+	measure 'TURNOVER MÊS ANTERIOR' = CALCULATE([TURNOVER],DATEADD(tb_calendario[DATA],-1,MONTH))
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: TURNOVER
+		lineageTag: e8be688f-f750-4962-842a-1767ca749f5b
+
+	measure 'TURNOVER INV' = ```
+			
+			    DIVIDE(
+			        DIVIDE(
+			            ([ADMITIDOS TURNOVER]+[DEMITIDOS TURNOVER INV]),2,0), [HEADCOUNT MÉDIO TURNOVER],0)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: TURNOVER
+		lineageTag: 01447231-b5c5-4dd8-b9e5-4405bf4dd2b2
+
+	measure 'DEMITIDOS TURNOVER INV' = CALCULATE([DEMITIDOS TURNOVER], tb_colaboradores[MOTIVO_TURNOVER] = "INVOLUNTÁRIO")
+		formatString: 0
+		displayFolder: TURNOVER
+		lineageTag: 27c8efe4-7a86-4eee-91ae-f86dbc4b2381
+
+	measure 'DEMITIDOS TURNOVER VOL' = CALCULATE([DEMITIDOS TURNOVER], tb_colaboradores[MOTIVO_TURNOVER] = "VOLUNTÁRIO")
+		formatString: 0
+		displayFolder: TURNOVER
+		lineageTag: 783d5fc8-e7b7-4df7-bb60-8fc91327d9e6
+
+	measure 'TURNOVER VOL' = ```
+			
+			    DIVIDE(
+			        DIVIDE(
+			            ([ADMITIDOS TURNOVER]+[DEMITIDOS TURNOVER VOL]),2,0), [HEADCOUNT MÉDIO TURNOVER],0)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: TURNOVER
+		lineageTag: 28cc4fcd-58e2-46c0-95bd-d11c1deb3bf1
+
+	measure 'HEADCOUNT TURNOVER' = ```
+			
+			        CALCULATE([HEADCOUNT], tb_colaboradores[REGRA_ATIVOS_TURNOVER] = TRUE())
+			```
+		formatString: #,0
+		displayFolder: TURNOVER
+		lineageTag: dc7a9ca2-df74-40d2-aba2-2e222f07c330
+
+	measure %_MULHERES_LIDERANÇA =
+			
+			VAR HEADCOUNT =
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?], tb_colaboradores[SEXO]))
+			VAR CALCULO = DIVIDE([HEADCOUNT_MULHERES], HEADCOUNT, 0)
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: 6b06482c-2c67-440f-850e-b17269fede05
+
+	measure HEADCOUNT_MULHERES =
+			
+			CALCULATE(
+			    [HEADCOUNT],
+			    'tb_colaboradores'[SEXO] = "FEMININO")
+		formatString: 0
+		displayFolder: HEADCOUNT
+		lineageTag: f6d9b06d-44a1-4824-8ae5-d6b35e9cad1f
+
+	measure HEADCOUNT_HOMENS =
+			
+			CALCULATE(
+			    [HEADCOUNT],
+			    'tb_colaboradores'[SEXO] = "MASCULINO")
+		formatString: 0
+		displayFolder: HEADCOUNT
+		lineageTag: da224dae-19ea-4ceb-a0aa-1ee58af76dc3
+
+	measure %_HEADCOUNT_LIDERANÇA = ```
+			
+			VAR HEADCOUNT = 
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?])
+			    )
+			VAR HEADCOUNT_TOTAL =
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?], tb_colaboradores[SEXO])
+			    )
+			VAR RESULTADO = DIVIDE(HEADCOUNT, HEADCOUNT_TOTAL)
+			RETURN
+			IF(ISBLANK(RESULTADO), 0, RESULTADO)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: e6642fc0-bc00-4597-b761-e3744304b23f
+
+	measure MÉDIA_MOVIMENTAÇÕES = DIVIDE([Movimentações], [HEADCOUNT], 0)
+		formatString: 0.0
+		lineageTag: a2a30d2f-9248-4148-a351-77d5a52b704b
+
+	measure '1 - %_MULHERES_LIDERANÇA' = 1-[%_MULHERES_LIDERANÇA]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: ab44a824-91e1-4842-9c35-24581e83f64b
+
+	measure %_PREENCHIMENTO_AUTODECLARAÇÃO =
+			
+			VAR HEADCOUNT =
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?]))
+			VAR RESULTADO = DIVIDE([HEADCOUNT], HEADCOUNT)
+			RETURN
+			IF(ISBLANK(RESULTADO), 0, RESULTADO)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: febd913d-3112-4be8-acd2-c857d0c9ca11
+
+	measure '1 - %_PREENCHIMENTO_AUTODECLARAÇÃO' = 1 - [%_PREENCHIMENTO_AUTODECLARAÇÃO]
+		displayFolder: DIVERSIDADE
+		lineageTag: 02a293c8-4304-41c3-b92b-0a5bc183f396
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %_AUTODECLARAÇÃO =
+			
+			VAR HEADCOUNT =
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?]),
+			    tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?] <> BLANK())
+			VAR RESULTADO = DIVIDE([HEADCOUNT], HEADCOUNT)
+			RETURN
+			IF(ISBLANK(RESULTADO), 0, RESULTADO)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: 2082429a-3098-4ca6-a243-6791e38322fb
+
+	measure '1 - %_AUTODECLARAÇÃO' = 1 - [%_AUTODECLARAÇÃO]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: 925a4971-946a-4fb3-b4b2-c4ac321f5af0
+
+	measure MEDIA_AUMENTO_SALARIAL = ```
+			
+			VAR CALCULO =
+			AVERAGEX(
+			    FILTER(
+			        tb_mov,
+			        tb_mov[Variacao] >= 0
+			            && NOT(ISBLANK(tb_mov[Variacao]))
+			            && NOT(ISBLANK(tb_mov[Salário]))
+			    ),
+			    tb_mov[Salário] - (tb_mov[Salário] / (1 + tb_mov[Variacao]))
+			)
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+			
+			// VAR TabelaPositiva =
+			//     FILTER(
+			//         tb_mov,
+			//         tb_mov[Variacao] >= 0
+			//             && NOT(ISBLANK(tb_mov[Variacao]))
+			//             && NOT(ISBLANK(tb_mov[Salário]))
+			//     )
+			// VAR TotalAntes =
+			//     SUMX(
+			//         TabelaPositiva,
+			//         tb_mov[Salário] / (1 + (tb_mov[Variacao]))
+			//     )
+			// VAR TotalAtual =
+			//     SUMX(
+			//         TabelaPositiva,
+			//         tb_mov[Salário]
+			//     )
+			// VAR PercentualMedio =
+			//     DIVIDE(TotalAtual - TotalAntes, TotalAntes, 0)
+			// RETURN
+			// IF(ISBLANK(PercentualMedio), 0, PercentualMedio)
+			
+			```
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		lineageTag: ee6e1b0a-49d7-47ae-9163-806ef8a08f1f
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure MOVER_HEADCOUNT_MULHERES_LIDERANÇA =
+			
+			CALCULATE(
+			    [HEADCOUNT],
+			    'tb_colaboradores'[SEXO] = "FEMININO",
+			    tb_colaboradores[LIDERANÇA_MOVER] = "LÍDER")
+		formatString: 0
+		displayFolder: DIVERSIDADE
+		lineageTag: 5efe984f-2325-4682-b091-fea9eb646a16
+
+	measure MÉDIA_CONTRATAÇÕES =
+			
+			VAR CALCULO = DIVIDE([ADMITIDOS], DISTINCTCOUNT(tb_calendario[MES_ANO]), 0)
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: 0
+		lineageTag: 4e9a4b9f-efe4-4cfd-9b55-b84b7ed33cce
+
+	measure TEXTO_%_DE_MULHERES_NA_LIDERANÇA =
+			
+			VAR COR = MAX(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?])
+			VAR PERCENTUAL_LIDERANCA = FORMAT([%_MULHERES_LIDERANÇA], "#.#%")
+			VAR HA_MULHERES = "Mulheres autodeclaradas " & COR & "s representam " & PERCENTUAL_LIDERANCA  & " das lideranças da ALLOS"
+			VAR NAO_HA_MULHERES = "Não há mulheres autodeclaradas " & COR & "s em cargos de lideranças na ALLOS"
+			RETURN
+			IF(
+			    [%_MULHERES_LIDERANÇA] > 0,
+			    HA_MULHERES,
+			    NAO_HA_MULHERES
+			    )
+		displayFolder: TEXTO
+		lineageTag: 0ad6c80e-c95b-4ff2-a245-68e4dfab72f0
+
+	measure TEXTO_%_DE_NEGROS_NA_LIDERANÇA =
+			
+			VAR PERCENTUAL_LIDERANCA = FORMAT([%_NEGROS_LIDERANÇA], "#.#%")
+			VAR HA_NEGROS_ABAIXO_DA_META = "Negros* ocupam " & PERCENTUAL_LIDERANCA  & " das lideranças da ALLOS, o que deixa a cia abaixo da meta de 48% de líderes negros."
+			VAR HA_NEGROS_ACIMA_DA_META = "Negros* ocupam " & PERCENTUAL_LIDERANCA  & " das lideranças da ALLOS, o que deixa a cia dentro da meta de 48% de líderes negros."
+			VAR NAO_HA_NEGROS = "Não há negros* em cargos de lideranças na ALLOS, o que deixa a cia abaixo da meta de 48% de líderes negros."
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    [%_NEGROS_LIDERANÇA] > 0 && [%_NEGROS_LIDERANÇA] < 0.48, HA_NEGROS_ABAIXO_DA_META,
+			    [%_NEGROS_LIDERANÇA] >= 0.48, HA_NEGROS_ACIMA_DA_META,
+			    NAO_HA_NEGROS
+			    )
+		displayFolder: TEXTO
+		lineageTag: 24d12976-c7d2-4333-bb61-3622120f7174
+
+	measure TEXTO_%_DE_MULHERES_NEGRAS_NA_LIDERANÇA =
+			
+			VAR PERCENTUAL_LIDERANCA = FORMAT([%_MULHERES_LIDERANÇA], "#.#%")
+			VAR HA_MULHERES = "Mulheres negras* correspondem a " & PERCENTUAL_LIDERANCA  & " das lideranças da ALLOS, o que reforça as boas de políticas de inclusão em cargos estratégidos da cia."
+			VAR NAO_HA_MULHERES = "Mulheres negras* correspondem a " & PERCENTUAL_LIDERANCA  & " das lideranças da ALLOS, o que sugere melhorias de políticas de inclusão em cargos estratégidos da cia."
+			RETURN
+			IF(
+			    [%_MULHERES_LIDERANÇA] >= 0.48,
+			    HA_MULHERES,
+			    NAO_HA_MULHERES
+			    )
+		displayFolder: TEXTO
+		lineageTag: 387099aa-d948-4664-aa97-748ae5ad28f8
+
+	measure TEXTO_%_DE_MULHERES_PCD_NA_LIDERANÇA =
+			
+			VAR PERCENTUAL_LIDERANCA = FORMAT([%_MULHERES_PCD_LIDERANÇA], "#.#%")
+			VAR HA_MULHERES = "Mulheres PcD's representam " & PERCENTUAL_LIDERANCA  & " das lideranças da ALLOS"
+			VAR NAO_HA_MULHERES = "Não há mulheres PcD's em cargos de lideranças na ALLOS"
+			RETURN
+			IF(
+			    [%_MULHERES_PCD_LIDERANÇA] > 0,
+			    HA_MULHERES,
+			    NAO_HA_MULHERES
+			    )
+		displayFolder: TEXTO
+		lineageTag: 00f5a9d7-10b0-4e9e-a60c-6c14c36060db
+
+	measure HEADCOUNT_MULHERES_PCD =
+			
+			CALCULATE(
+			    [HEADCOUNT],
+			    'tb_colaboradores'[SEXO] = "FEMININO",
+			    tb_colaboradores[PCD] = "S",
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?]))
+		formatString: 0
+		displayFolder: HEADCOUNT
+		lineageTag: ae43b9de-965d-4588-a12c-3695561b25b7
+
+	measure %_MULHERES_PCD_LIDERANÇA =
+			
+			VAR HEADCOUNT =
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[SEXO]),
+			    tb_colaboradores[PCD] = "S",
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?]))
+			VAR CALCULO = DIVIDE([HEADCOUNT_MULHERES_PCD], HEADCOUNT, 0)
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: 781d236f-8ecd-43ca-9350-5a1ab13d3ccb
+
+	measure '1 - %_MULHERES_PCD_NA_LIDERANÇA' = 1 - [%_MULHERES_PCD_LIDERANÇA]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: d44ab68d-3797-450f-b5fe-f1e60f7a4641
+
+	measure '1 - %_HEADCOUNT_LIDERANÇA' = 1 - [%_HEADCOUNT_LIDERANÇA]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: 8348f0e1-d30b-4174-a7b9-fd4bb226f474
+
+	measure %_NEGROS_LIDERANÇA =
+			
+			VAR HEADCOUNT =
+			CALCULATE(
+			    [HEADCOUNT],
+			    REMOVEFILTERS(tb_colaboradores[Com_qual_cor_ou_raça_você_se_identifica?], tb_colaboradores[SEXO]))
+			VAR CALCULO = DIVIDE([HEADCOUNT], HEADCOUNT, 0)
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: DIVERSIDADE
+		lineageTag: bff7a651-7860-4394-86a8-420cbde55716
+
+	measure ADMITIDOS = IF(ISBLANK(COUNTROWS(tb_colaboradores)), 0, COUNTROWS(tb_colaboradores))
+		formatString: 0
+		displayFolder: HEADCOUNT
+		lineageTag: afb91d26-22ee-4994-ae8d-7342f2d16372
+
+	measure DEMITIDOS =
+			
+			CALCULATE(
+			    [ADMITIDOS],
+			    USERELATIONSHIP(tb_colaboradores[DEMISSAO],tb_calendario[DATA]),
+			    NOT ISBLANK(tb_colaboradores[DEMISSAO]))
+		formatString: 0
+		displayFolder: HEADCOUNT
+		lineageTag: 5f4c47d0-4df7-4370-9674-fbfe483f1dca
+
+	measure HEADCOUNT = ```
+			
+			VAR CALCULO = 
+			CALCULATE(
+			    [ADMITIDOS],
+			    FILTER(
+			        ALL(
+			            tb_calendario[DATA]
+			            ),
+			        tb_calendario[DATA] <= MAX(tb_calendario[DATA])
+			    )
+			)
+			- 
+			CALCULATE(
+			    [DEMITIDOS],
+			    FILTER(
+			        ALL(
+			            tb_calendario[DATA]
+			            ),
+			        tb_calendario[DATA] <= max(tb_calendario[DATA]))
+			        )
+			
+			RETURN
+			IF(ISBLANK(CALCULO), 0, CALCULO)
+			```
+		formatString: #,0
+		displayFolder: HEADCOUNT
+		lineageTag: 24cad960-207a-48f0-82e2-d790f5125243
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: b6396360-6c04-4faa-813b-1aa55b3704f2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Medidas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = f83297102b5941e3ae5e29084c5e1cca
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

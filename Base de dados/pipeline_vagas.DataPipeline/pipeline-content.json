@@ -1,0 +1,134 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "566bbab2-9557-b18d-4c1f-ae804294de3d",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "dataflow_ingestao",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "48f28a61-cc66-8be6-4698-ca9b9fe6e6ea",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_vagas_gupy_bronze_to_silver",
+        "dependsOn": [
+          {
+            "activity": "dataflow_ingestao",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "post",
+          "groupId": "bba0219c-62af-4fa9-a4da-84977313ebc8",
+          "datasetId": "167b6ab3-8300-4e57-88d9-050e770aeaa1",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "tb_vagas_gupy"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "c2ca7e2b-f769-4f22-9ea7-4a3d5a246db0"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "modelo_semantico_GeP",
+        "dependsOn": [
+          {
+            "activity": "tb_vagas_gupy_silver_to_gold",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "tb_empresas",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "d0d2f06d-19ad-856e-4123-d6b17a4698b2",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_vagas_gupy_silver_to_gold",
+        "dependsOn": [
+          {
+            "activity": "tb_vagas_gupy_bronze_to_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9dd9bf03-0d8f-8c1f-48c0-401bb61f2a8b",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "tb_empresas",
+        "dependsOn": [
+          {
+            "activity": "dataflow_ingestao",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

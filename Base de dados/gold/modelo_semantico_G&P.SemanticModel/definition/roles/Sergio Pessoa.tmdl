@@ -1,0 +1,7 @@
+role 'Sergio Pessoa'
+	modelPermission: read
+
+	tablePermission tb_empresa = [Portfólio] == "Sergio Pessoa"
+
+	annotation PBI_Id = 4b3cefbb7435457eb19515073d549bc4
+

@@ -1,0 +1,12 @@
+role 'BP (Juliana Abreu)'
+	modelPermission: read
+
+	tablePermission tb_colaboradores =
+			IF(
+			    CONTAINSSTRING([PATH_HIERARQUIA], "JULIANA MARQUES DE ABREU"),
+			    TRUE(),
+			    FALSE()
+			)
+
+	annotation PBI_Id = b35cfbaeb6c94978b1919a9d1015e7cb
+

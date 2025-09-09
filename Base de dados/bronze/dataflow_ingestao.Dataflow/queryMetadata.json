@@ -1,0 +1,189 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow 1",
+  "queryGroups": [],
+  "documentLocale": "pt-BR",
+  "queriesMetadata": {
+    "tb_empresa_bronze": {
+      "queryId": "4845ebcf-5bbd-473a-8f0a-046cd39e90bf",
+      "queryName": "tb_empresa_bronze",
+      "loadEnabled": false
+    },
+    "tb_grade_bronze": {
+      "queryId": "36023358-7389-4242-8e19-eafdad2e41ed",
+      "queryName": "tb_grade_bronze",
+      "loadEnabled": false
+    },
+    "tb_colaboradores_bronze": {
+      "queryId": "712f0300-d49b-4fde-ad85-771872606d30",
+      "queryName": "tb_colaboradores_bronze",
+      "loadEnabled": false
+    },
+    "tb_success_bronze": {
+      "queryId": "748cbdba-4caa-4f6f-801b-4fa3513932a0",
+      "queryName": "tb_success_bronze",
+      "loadEnabled": false
+    },
+    "tb_movimentacoes_bronze": {
+      "queryId": "a803c205-9460-449b-8187-81b05c305c17",
+      "queryName": "tb_movimentacoes_bronze",
+      "loadEnabled": false
+    },
+    "tb_vagas_bronze": {
+      "queryId": "f75e2468-48a7-49d2-97eb-02111e7a6bfc",
+      "queryName": "tb_vagas_bronze",
+      "loadEnabled": false
+    },
+    "tb_vagas_gupy_bronze": {
+      "queryId": "1b85778e-3be5-489b-b1aa-05e1970a1390",
+      "queryName": "tb_vagas_gupy_bronze",
+      "loadEnabled": false
+    },
+    "tb_imagens_perfil_bronze": {
+      "queryId": "ff3a2ffe-066f-4849-8ff5-26efb2537648",
+      "queryName": "tb_imagens_perfil_bronze",
+      "loadEnabled": false
+    },
+    "tb_diretorias": {
+      "queryId": "46952728-b574-4dea-88cc-88d3dcce4e00",
+      "queryName": "tb_diretorias",
+      "loadEnabled": false
+    },
+    "tb_colaboradores_helloo": {
+      "queryId": "fc56090e-3e14-4798-8980-84781b05f22b",
+      "queryName": "tb_colaboradores_helloo",
+      "loadEnabled": false
+    },
+    "tb_de-para_areas_shopping": {
+      "queryId": "210f657b-91e6-40ca-ab5f-9c614e0fbd45",
+      "queryName": "tb_de-para_areas_shopping",
+      "loadEnabled": false
+    },
+    "tb_shoppings_administrados": {
+      "queryId": "32038cfb-1bf9-4010-bca6-21f9df9bc3bc",
+      "queryName": "tb_shoppings_administrados",
+      "loadEnabled": false
+    },
+    "tb_empresa_bronze_DataDestination": {
+      "queryId": "a887821b-9b63-4c0d-ac36-269f3eebce8b",
+      "queryName": "tb_empresa_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_grade_bronze_DataDestination": {
+      "queryId": "9392cef9-73cd-4999-bf02-1105b463ba1f",
+      "queryName": "tb_grade_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_colaboradores_bronze_DataDestination": {
+      "queryId": "078f6bad-594e-471f-b437-c26e711c01d3",
+      "queryName": "tb_colaboradores_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_success_bronze_DataDestination": {
+      "queryId": "cb40b496-39e5-4122-bd34-73738d91406c",
+      "queryName": "tb_success_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_vagas_bronze_DataDestination": {
+      "queryId": "1f09889b-345c-427b-81e0-6a35ff31fe85",
+      "queryName": "tb_vagas_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_vagas_gupy_bronze_DataDestination": {
+      "queryId": "c3e5c63e-355a-4c1c-bbc2-195c3c3068a2",
+      "queryName": "tb_vagas_gupy_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_imagens_perfil_bronze_DataDestination": {
+      "queryId": "e539ed81-7bb3-4301-9526-3735c143130a",
+      "queryName": "tb_imagens_perfil_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_diretorias_DataDestination": {
+      "queryId": "f3710df9-11e7-4a60-bec0-5f4cfd019d7e",
+      "queryName": "tb_diretorias_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_shoppings_administrados_DataDestination": {
+      "queryId": "700692de-8185-4a03-b30f-0c9321f3d876",
+      "queryName": "tb_shoppings_administrados_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_de-para_areas_shopping_DataDestination": {
+      "queryId": "88d45a39-8640-43bd-937a-3ef59bd62330",
+      "queryName": "tb_de-para_areas_shopping_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_movimentacoes_bronze_DataDestination": {
+      "queryId": "ebe76424-cbf4-4fbe-bcaf-6dc06ceddc3c",
+      "queryName": "tb_movimentacoes_bronze_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_autodeclaracao_racial_forms": {
+      "queryId": "56fbc229-6b95-4318-ac43-1f7fbb54b90d",
+      "queryName": "tb_autodeclaracao_racial_forms",
+      "loadEnabled": false
+    },
+    "tb_autodeclaracao_racial": {
+      "queryId": "00acda59-983b-43f5-a207-f782e0925d37",
+      "queryName": "tb_autodeclaracao_racial",
+      "loadEnabled": false
+    },
+    "tb_autodeclaracao_racial_DataDestination": {
+      "queryId": "922fb8e2-c068-4e92-9efe-bfab54375406",
+      "queryName": "tb_autodeclaracao_racial_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_colaboradores_helloo_DataDestination": {
+      "queryId": "e9e45509-89b9-4020-8a7e-89a1de8fdc94",
+      "queryName": "tb_colaboradores_helloo_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB",
+      "kind": "SharePoint",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"e3aa6a76-eba9-45b6-9c66-ab1e5ad5df03\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"a22b3cf0-80b6-4ceb-9bb2-d8fd6d77ee97\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/grades.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"eac57d54-99c9-4713-9c08-75065dc39192\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/imagens_perfil.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"b20ab284-c68e-4f6d-811c-c4f6c978a1e3\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/de-para_diretorias.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"ba219b1a-b245-4b2f-a213-3e5cc0039917\"}"
+    },
+    {
+      "path": "https://brmallsadm.sharepoint.com/sites/BRM-REMUNERAO/G&P-DB/Documentos%20Compartilhados/de-para_areas_shopping.xlsx",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"9e90cf7d-e91f-44fe-b045-44a0eb3269d1\",\"DatasourceId\":\"49766bc0-487b-44a4-a1f1-2ea65a8e5972\"}"
+    }
+  ]
+}

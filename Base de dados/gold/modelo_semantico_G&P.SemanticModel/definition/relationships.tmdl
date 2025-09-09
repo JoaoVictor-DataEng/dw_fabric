@@ -1,0 +1,18 @@
+relationship 053f19d6-3f2a-1516-4d68-9a452606407a
+	fromColumn: tb_colaboradores.CNPJ
+	toColumn: tb_empresa.CNPJ
+
+relationship cf0af1a8-686c-81d9-d3f0-9cf9f5528ea0
+	fromColumn: tb_colaboradores.ADMISSAO
+	toColumn: tb_calendario.DATA
+
+relationship 4423d5d0-0220-dd71-577f-441c5113ef05
+	toCardinality: many
+	fromColumn: tb_mov.CPF
+	toColumn: tb_colaboradores.CPF
+
+relationship fe0f0abc-bef3-7437-57db-a530fe5d9cd5
+	isActive: false
+	fromColumn: tb_colaboradores.DEMISSAO
+	toColumn: tb_calendario.DATA
+

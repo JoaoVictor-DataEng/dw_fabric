@@ -1,0 +1,9 @@
+role Holding
+	modelPermission: read
+
+	tablePermission tb_vagas_gupy = [Diretoria_Executiva] <> "DIRETORIA DE OPERAÇÕES"
+
+	tablePermission tb_empresa = [Unidade] == "Holding"
+
+	annotation PBI_Id = e7837af080214f549d9ea6af4e56aa5f
+

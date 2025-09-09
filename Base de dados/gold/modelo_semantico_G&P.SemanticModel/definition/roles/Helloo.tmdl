@@ -1,0 +1,7 @@
+role Helloo
+	modelPermission: read
+
+	tablePermission tb_colaboradores = [É_HELLOO] == "S"
+
+	annotation PBI_Id = 4ce62af267e6477ea7d888241690bdc3
+

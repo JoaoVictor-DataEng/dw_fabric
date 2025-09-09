@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "modelo_semantico_G&P_hierarquia"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "be5f9086-7eb8-a523-4c10-d86c7bab8c9e"
+  }
+}

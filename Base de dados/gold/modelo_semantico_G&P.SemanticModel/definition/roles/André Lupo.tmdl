@@ -1,0 +1,7 @@
+role 'André Lupo'
+	modelPermission: read
+
+	tablePermission tb_empresa = [Portfólio] == "Andre Lupo"
+
+	annotation PBI_Id = 6fd0d7d901bd423880aefd01d41289fd
+

@@ -1,2 +1,7 @@
 # Ignorar pastas com arquivos de Power BI
+*Report/
+
+# Ignorar pastas com arquivos de Staging
+Staging/
+
 

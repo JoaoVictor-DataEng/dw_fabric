@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P - Turnover"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "019b18b5-d6ec-b7dc-4a09-a8fd0e415151"
+  }
+}

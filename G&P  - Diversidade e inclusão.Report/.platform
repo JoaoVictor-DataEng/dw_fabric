@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P  - Diversidade e inclusão"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bf2f2651-3d21-a498-48fe-f69882cce1a9"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P - Colaboradores_DHO"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "31621df8-feea-b7cd-4aa5-f93dbbf938a8"
+  }
+}

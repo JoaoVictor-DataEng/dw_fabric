@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P - Matriz de acessos (TI)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8be8777d-553f-b4f2-4292-49986aaacc4d"
+  }
+}

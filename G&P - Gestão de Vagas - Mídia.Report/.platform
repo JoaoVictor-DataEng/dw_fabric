@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P - Gestão de Vagas - Mídia"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "627a6e30-ec6f-960f-4156-7b039e2daada"
+  }
+}

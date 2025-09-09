@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P -  Histórico de movimentações"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "143d3a94-5278-955e-4bbf-fbfe4dfc3f31"
+  }
+}

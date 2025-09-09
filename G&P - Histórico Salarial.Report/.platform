@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "G&P - Histórico Salarial"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "54cc546b-ec24-90ce-453b-70058c18d4ff"
+  }
+}

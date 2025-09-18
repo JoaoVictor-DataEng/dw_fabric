@@ -160,9 +160,10 @@ in passo3),
     #"Coluna 'EMPRESA' inserida" = Table.AddColumn(#"Coluna 'CNPJ' inserida", "EMPRESA", each [SHOPPING], type text),
   #"Coluna 'DIRETORIA' inserida" = Table.TransformColumnTypes(Table.AddColumn(#"Coluna 'EMPRESA' inserida", "DIRETORIA", each "DIRETORIA DE OPERAÇÕES"), {{"DIRETORIA", type text}}),
   #"Renamed columns" = Table.RenameColumns(#"Coluna 'DIRETORIA' inserida", {{"CPF GESTOR", "CPF_GESTOR"}, {"Shopping Origem/Destino", "Shopping_Origem/Destino"}}),
-    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Renamed columns", {{"SHOPPING", type text}, {"UNIDADE", type text}, {"CPF", type text}, {"NOME", type text}, {"EMAIL", type text}, {"CARGO", type text}, {"ADMISSAO", type date}, {"GESTOR", type text}, {"CPF_GESTOR", type text}, {"PORTFÓLIO", type text}, {"DEMISSAO", type date}, {"Shopping_Origem/Destino", type text}, {"É_SHOPPING_ADM", type text}, {"CNPJ", type text}})
+    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Renamed columns", {{"SHOPPING", type text}, {"UNIDADE", type text}, {"CPF", type text}, {"NOME", type text}, {"EMAIL", type text}, {"CARGO", type text}, {"ADMISSAO", type date}, {"GESTOR", type text}, {"CPF_GESTOR", type text}, {"PORTFÓLIO", type text}, {"DEMISSAO", type date}, {"Shopping_Origem/Destino", type text}, {"É_SHOPPING_ADM", type text}, {"CNPJ", type text}}),
+  #"Colunas renomeadas 1" = Table.RenameColumns(#"Tipo Alterado1", {{"Shopping_Origem/Destino", "EMPRESA_ANTERIOR"}})
 in
-    #"Tipo Alterado1";
+    #"Colunas renomeadas 1";
 shared tb_empresa_bronze_DataDestination = let
   Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "bba0219c-62af-4fa9-a4da-84977313ebc8"]}[Data],
@@ -217,13 +218,6 @@ shared tb_diretorias_DataDestination = let
   Navigation_1 = Pattern{[workspaceId = "bba0219c-62af-4fa9-a4da-84977313ebc8"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "27363035-663a-47b7-9d72-fb679ddb5b75"]}[Data],
   TableNavigation = Navigation_2{[Id = "tb_diretorias", ItemKind = "Table"]}?[Data]?
-in
-  TableNavigation;
-shared tb_shoppings_administrados_DataDestination = let
-  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
-  Navigation_1 = Pattern{[workspaceId = "bba0219c-62af-4fa9-a4da-84977313ebc8"]}[Data],
-  Navigation_2 = Navigation_1{[lakehouseId = "27363035-663a-47b7-9d72-fb679ddb5b75"]}[Data],
-  TableNavigation = Navigation_2{[Id = "tb_shoppings_administrados", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;
 shared #"tb_de-para_areas_shopping_DataDestination" = let
@@ -293,5 +287,12 @@ shared tb_colaboradores_helloo_DataDestination = let
   Navigation_1 = Pattern{[workspaceId = "bba0219c-62af-4fa9-a4da-84977313ebc8"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "27363035-663a-47b7-9d72-fb679ddb5b75"]}[Data],
   TableNavigation = Navigation_2{[Id = "tb_colaboradores_helloo", ItemKind = "Table"]}?[Data]?
+in
+  TableNavigation;
+shared tb_shoppings_administrados_DataDestination = let
+  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Navigation_1 = Pattern{[workspaceId = "bba0219c-62af-4fa9-a4da-84977313ebc8"]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = "27363035-663a-47b7-9d72-fb679ddb5b75"]}[Data],
+  TableNavigation = Navigation_2{[Id = "tb_shoppings_administrados", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;

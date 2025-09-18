@@ -113,12 +113,6 @@
       "isHidden": true,
       "loadEnabled": false
     },
-    "tb_shoppings_administrados_DataDestination": {
-      "queryId": "700692de-8185-4a03-b30f-0c9321f3d876",
-      "queryName": "tb_shoppings_administrados_DataDestination",
-      "isHidden": true,
-      "loadEnabled": false
-    },
     "tb_de-para_areas_shopping_DataDestination": {
       "queryId": "88d45a39-8640-43bd-937a-3ef59bd62330",
       "queryName": "tb_de-para_areas_shopping_DataDestination",
@@ -150,6 +144,12 @@
     "tb_colaboradores_helloo_DataDestination": {
       "queryId": "e9e45509-89b9-4020-8a7e-89a1de8fdc94",
       "queryName": "tb_colaboradores_helloo_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "tb_shoppings_administrados_DataDestination": {
+      "queryId": "94cb227c-3135-4210-89e3-a027db871b48",
+      "queryName": "tb_shoppings_administrados_DataDestination",
       "isHidden": true,
       "loadEnabled": false
     }

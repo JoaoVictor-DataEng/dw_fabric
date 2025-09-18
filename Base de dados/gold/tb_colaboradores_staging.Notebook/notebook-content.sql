@@ -44,9 +44,9 @@ WITH CTE_temp AS (
             WHEN CARGO LIKE '%ANALISTA%' OR CARGO LIKE 'ANL%' THEN 'ANALISTA'
             WHEN CARGO LIKE '%APRENDIZ%' THEN 'APRENDIZ'
             WHEN CARGO LIKE '%ASSIST%' THEN 'ASSISTENTE'
-            WHEN CARGO LIKE '%DIRETOR%EXECUTIV%PRESIDENT%' THEN 'CEO'
             WHEN CARGO LIKE '%COORD%' OR CARGO LIKE '%COORDENADOR%' THEN 'COORDENADOR'
-            WHEN CARGO LIKE '%DIRETOR%EXECUTIV%' OR
+            WHEN CARGO LIKE '%DIRETOR%EXECUTIV%PRESIDENT%' OR 
+                CARGO LIKE '%DIRETOR%EXECUTIV%' OR
                 CARGO LIKE 'PRESIDENTE%' OR
                 CARGO LIKE '%DIRETOR%HELLOO%' OR
                 CARGO LIKE '%DIRETOR%ESTRAT%RI%' OR
@@ -254,17 +254,6 @@ AND DEMISSAO IS NULL
 -- CELL ********************
 
 SELECT DISTINCT DIRETORIA FROM tb_colaboradores_staging WHERE DEMISSAO IS NULL
-
--- METADATA ********************
-
--- META {
--- META   "language": "sql",
--- META   "language_group": "sqldatawarehouse"
--- META }
-
--- CELL ********************
-
-SELECT * FROM tb_colaboradores_staging
 
 -- METADATA ********************
 

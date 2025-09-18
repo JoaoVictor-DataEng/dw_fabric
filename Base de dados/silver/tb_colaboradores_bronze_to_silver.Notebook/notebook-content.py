@@ -27,7 +27,6 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from pyspark.sql.window import Window
 
-
 # Configurando o ambiente para considerar datas anteriores a 1500/01/01
 spark.conf.set("spark.sql.parquet.datetimeRebaseModeInWrite", "CORRECTED")
 
@@ -106,6 +105,7 @@ df = df\
     .withColumn("NACIONALIDADE", upper(col("NACIONALIDADE")))\
     .withColumn("GRAU_DE_INSTRUCAO", upper("GRAU_DE_INSTRUCAO"))
 
+# Criando partições para retornar o histórico de movimentações de cada colaborador
 window_spec = Window.partitionBy("CPF").orderBy("DT_INICIO_SITUACAO")
 df = df\
     .withColumn("EMPRESA_ANTERIOR", lag("EMPRESA").over(window_spec))\
@@ -803,17 +803,6 @@ df = df\
 # MARKDOWN ********************
 
 # #### Salvando a tabela
-
-# CELL ********************
-
-display(df)
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
 
 # CELL ********************
 

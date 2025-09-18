@@ -181,6 +181,20 @@
             ]
           },
           {
+            "name": "CARGO_ANTERIOR",
+            "dataType": "string",
+            "sourceColumn": "CARGO_ANTERIOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO_ANTERIOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
             "name": "CAUSA_RESCISÃO",
             "dataType": "string",
             "sourceColumn": "CAUSA_RESCISÃO",
@@ -398,6 +412,20 @@
             "sourceColumn": "EMPRESA",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMPRESA_ANTERIOR",
+            "dataType": "string",
+            "sourceColumn": "EMPRESA_ANTERIOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMPRESA_ANTERIOR",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -787,6 +815,24 @@
             ]
           },
           {
+            "name": "SALARIO_ANTERIOR",
+            "dataType": "double",
+            "sourceColumn": "SALARIO_ANTERIOR",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO_ANTERIOR",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
             "name": "SEXO",
             "dataType": "string",
             "sourceColumn": "SEXO",
@@ -820,20 +866,6 @@
             "sourceColumn": "SITUAÇÃO",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "SITUAÇÃO",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "Shopping_Origem/Destino",
-            "dataType": "string",
-            "sourceColumn": "Shopping_Origem/Destino",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Shopping_Origem/Destino",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -3620,6 +3652,20 @@
             ]
           },
           {
+            "name": "CARGO_ANTERIOR",
+            "dataType": "string",
+            "sourceColumn": "CARGO_ANTERIOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CARGO_ANTERIOR",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
             "name": "CAUSA_RESCISÃO",
             "dataType": "string",
             "sourceColumn": "CAUSA_RESCISÃO",
@@ -3837,6 +3883,20 @@
             "sourceColumn": "EMPRESA",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "EMPRESA",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "EMPRESA_ANTERIOR",
+            "dataType": "string",
+            "sourceColumn": "EMPRESA_ANTERIOR",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "EMPRESA_ANTERIOR",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -4339,6 +4399,24 @@
             ]
           },
           {
+            "name": "SALARIO_ANTERIOR",
+            "dataType": "double",
+            "sourceColumn": "SALARIO_ANTERIOR",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "SALARIO_ANTERIOR",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
             "name": "SEXO",
             "dataType": "string",
             "sourceColumn": "SEXO",
@@ -4372,20 +4450,6 @@
             "sourceColumn": "SITUAÇÃO",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "SITUAÇÃO",
-            "summarizeBy": "none",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
-            "name": "Shopping_Origem/Destino",
-            "dataType": "string",
-            "sourceColumn": "Shopping_Origem/Destino",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Shopping_Origem/Destino",
             "summarizeBy": "none",
             "annotations": [
               {

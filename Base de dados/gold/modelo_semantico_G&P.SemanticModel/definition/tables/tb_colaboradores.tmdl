@@ -418,16 +418,6 @@ table tb_colaboradores
 
 		annotation SummarizationSetBy = Automatic
 
-	column Shopping_Origem/Destino
-		dataType: string
-		sourceProviderType: varchar(8000)
-		lineageTag: da6e27ba-51b1-430b-8119-79718a6bf0da
-		sourceLineageTag: Shopping_Origem/Destino
-		summarizeBy: none
-		sourceColumn: Shopping_Origem/Destino
-
-		annotation SummarizationSetBy = Automatic
-
 	column UF
 		dataType: string
 		sourceProviderType: varchar(8000)
@@ -820,6 +810,38 @@ table tb_colaboradores
 		sourceColumn: PATH_HIERARQUIA
 
 		annotation SummarizationSetBy = Automatic
+
+	column CARGO_ANTERIOR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 60fc416e-af32-4da1-9924-9be08e99a5da
+		sourceLineageTag: CARGO_ANTERIOR
+		summarizeBy: none
+		sourceColumn: CARGO_ANTERIOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMPRESA_ANTERIOR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0c3788cd-191d-4008-bcf7-2b16db187f2c
+		sourceLineageTag: EMPRESA_ANTERIOR
+		summarizeBy: none
+		sourceColumn: EMPRESA_ANTERIOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALARIO_ANTERIOR
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 21211123-bbf3-4bdb-bd40-33b8d44f119b
+		sourceLineageTag: SALARIO_ANTERIOR
+		summarizeBy: sum
+		sourceColumn: SALARIO_ANTERIOR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition tb_colaboradores = entity
 		mode: directLake
